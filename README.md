@@ -59,14 +59,14 @@ See `validation/status.json` and `validation/reports/` for recorded evidence. `a
 
 ## Public release
 
-Physical fit testing is not complete. Keep this build local until the checks in `validation/status.json` pass, the exact WASM corresponding-source package is completed, and the user supplies the purchased domain, real contact and source repository URL. No site or repository has been published by this implementation.
+The domain **binfitlab.com** and its HTTPS certificate are configured. The website is currently hosted as **owner-private** while a source-captured engine build is prepared. Contact: yiwangyuai@gmail.com. Application source is published at https://github.com/dbshiwiejsjdjdjjdj121-sketch/binfitlab.
 
-Production configuration uses `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_SOURCE_URL` and `NEXT_PUBLIC_PUBLIC_RELEASE=true`. Export these environment variables when building (see `.env.example`). `npm run check:release` and the production build block an incomplete release. After the evidence is complete, update the compatibility copy from the actual test results, build the static site, verify canonical URLs and sitemap, deploy, and verify the domain in Search Console.
+Physical fit testing remains incomplete. The user requested an initial public beta with accurate testing labels. A beta needs all software checks and complete corresponding source; a stable release also needs physical fit evidence. The exact dependency sources of the legacy prebuilt engine have not been established. A fresh upstream build with pinned dependencies is prepared in the public repository's `engine/` directory; its GitHub workflow currently needs the owner's authenticated browser session because the CLI token cannot write workflows.
+
+Production configuration uses `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_SOURCE_URL`, `NEXT_PUBLIC_PUBLIC_RELEASE=true`, and `NEXT_PUBLIC_RELEASE_CHANNEL=beta` or `stable`. Export these environment variables when building (see `.env.example`). `npm run check:release` and the production build block an incomplete release. After the evidence is complete, update the compatibility copy from actual results, build the static site, verify canonical URLs and sitemap, deploy, and verify the domain in Search Console.
+
+Run `npx tsx scripts/check-assembly.ts` after regenerating the geometry fixtures to compare nominal assembly collisions with independently sourced reference parts. See `validation/reports/digital-assembly.md` for its assumptions and limits.
 
 ## License
 
 Application code: GPL-3.0-only. Vendored upstream projects retain their licenses and notices; see `public/licenses/`. The original Gridfinity system is credited to Zack Freedman. This is an independent project.
-
-## Deployment progress
-
-The domain binfitlab.com and TLS certificate are configured. The hosted site is currently owner-private. A complete source-captured engine build is prepared in `engine/`; its cloud workflow is awaiting an authenticated GitHub session. The old prebuilt engine is fetched directly from the official OpenSCAD server for local development and is deliberately absent from this public repository.
