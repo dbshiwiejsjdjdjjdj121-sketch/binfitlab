@@ -1,0 +1,45 @@
+{
+  "units": "mm",
+  "scale": "100%",
+  "status": "Physical tests pending",
+  "models": [
+    {
+      "label": "A",
+      "file": "models/bin-1x1-2u-1x1-lip.stl",
+      "quantity": 2,
+      "purpose": "Our small bin; print two for stacking",
+      "sha256": "34aa6165622947b225d9c9663bed9e9de4798c1d43501dd0ccfb71f3cf8b7b1a"
+    },
+    {
+      "label": "B",
+      "file": "models/bin-2x1-3u-2x1-lip.stl",
+      "quantity": 1,
+      "purpose": "Our divided bin; spans a seam between plates",
+      "sha256": "a2f779984f62161588510e0c470a9812861f0e6de801680359c765f0b573f82a"
+    },
+    {
+      "label": "C",
+      "file": "models/plate-1x1.stl",
+      "quantity": 2,
+      "purpose": "Our plates; place side by side",
+      "sha256": "31bde727aa057bed2c11f860392e04a8877831b41b55282d6fb1ba35760828f3"
+    },
+    {
+      "label": "R1",
+      "file": "reference/reference-bin-1x1-2u.stl",
+      "quantity": 1,
+      "purpose": "Independent vector76 reference bin",
+      "sha256": "a50183bf918fea913fdbd735c5980f7f28c6a6da408edda723a78d83853b3efc"
+    },
+    {
+      "label": "R2",
+      "file": "reference/reference-plate-1x1.stl",
+      "quantity": 1,
+      "purpose": "Independent vector76 reference plate",
+      "sha256": "ad7f04e35e1ae8b2baabbb20a1f764a1a4a731179853e7d227d4632bf6709201"
+    }
+  ],
+  "rebuiltCommit": "910e22d8607fd7f5f51ad5e5cbc5287a76810bfd",
+  "referenceSource": "https://github.com/vector76/gridfinity_openscad/tree/0e7308cd8fc7fb4191aa69d81175a90d10de751c",
+  "referenceLicense": "MIT, Copyright (c) 2022 Jamie"
+}

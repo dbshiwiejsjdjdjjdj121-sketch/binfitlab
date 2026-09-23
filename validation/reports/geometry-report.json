@@ -1,0 +1,385 @@
+{
+  "date": "2026-09-23T17:03:23.111Z",
+  "modelCommit": "910e22d8607fd7f5f51ad5e5cbc5287a76810bfd",
+  "engine": "2025.03.25.wasm24456",
+  "results": [
+    {
+      "key": "bin-1x1-2u-1x1-lip",
+      "model": {
+        "kind": "bin",
+        "nx": 1,
+        "ny": 1,
+        "heightU": 2,
+        "columns": 1,
+        "rows": 1,
+        "lip": true
+      },
+      "triangles": 5944,
+      "size": [
+        41.5,
+        41.5,
+        17.547929763793945
+      ],
+      "min": [
+        -20.75,
+        -20.75,
+        0
+      ],
+      "max": [
+        20.75,
+        20.75,
+        17.547929763793945
+      ],
+      "volume": 13691.457679860889,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "orientationErrors": 0,
+      "valid": true,
+      "elapsedMs": 425,
+      "logs": [
+        "Could not initialize localization (application path is '/').",
+        "Geometries in cache: 56",
+        "Geometry cache size in bytes: 752024",
+        "CGAL Polyhedrons in cache: 38",
+        "CGAL cache size in bytes: 0",
+        "Total rendering time: 0:00:00.219",
+        "   Top level object is a 3D object (manifold):",
+        "   Status:     NoError",
+        "   Genus:      0",
+        "   Vertices:     5140",
+        "   Facets:      10276"
+      ]
+    },
+    {
+      "key": "bin-2x3-3u-1x1-lip",
+      "model": {
+        "kind": "bin",
+        "nx": 2,
+        "ny": 3,
+        "heightU": 3,
+        "columns": 1,
+        "rows": 1,
+        "lip": true
+      },
+      "triangles": 9272,
+      "size": [
+        83.5,
+        125.5,
+        24.547929763793945
+      ],
+      "min": [
+        -41.75,
+        -62.75,
+        0
+      ],
+      "max": [
+        41.75,
+        62.75,
+        24.547929763793945
+      ],
+      "volume": 76322.24270921966,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "orientationErrors": 0,
+      "valid": true,
+      "elapsedMs": 423,
+      "logs": [
+        "Could not initialize localization (application path is '/').",
+        "Geometries in cache: 58",
+        "Geometry cache size in bytes: 766256",
+        "CGAL Polyhedrons in cache: 44",
+        "CGAL cache size in bytes: 0",
+        "Total rendering time: 0:00:00.219",
+        "   Top level object is a 3D object (manifold):",
+        "   Status:     NoError",
+        "   Genus:      0",
+        "   Vertices:     7080",
+        "   Facets:      14156"
+      ]
+    },
+    {
+      "key": "bin-2x1-3u-2x1-lip",
+      "model": {
+        "kind": "bin",
+        "nx": 2,
+        "ny": 1,
+        "heightU": 3,
+        "columns": 2,
+        "rows": 1,
+        "lip": true
+      },
+      "triangles": 9612,
+      "size": [
+        83.5,
+        41.5,
+        24.547929763793945
+      ],
+      "min": [
+        -41.75,
+        -20.75,
+        0
+      ],
+      "max": [
+        41.75,
+        20.75,
+        24.547929763793945
+      ],
+      "volume": 28730.048650440378,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "orientationErrors": 0,
+      "valid": true,
+      "elapsedMs": 429,
+      "logs": [
+        "Could not initialize localization (application path is '/').",
+        "Geometries in cache: 58",
+        "Geometry cache size in bytes: 766256",
+        "CGAL Polyhedrons in cache: 42",
+        "CGAL cache size in bytes: 0",
+        "Total rendering time: 0:00:00.235",
+        "   Top level object is a 3D object (manifold):",
+        "   Status:     NoError",
+        "   Genus:      0",
+        "   Vertices:     8682",
+        "   Facets:      17360"
+      ]
+    },
+    {
+      "key": "bin-1x1-8u-1x1-flat",
+      "model": {
+        "kind": "bin",
+        "nx": 1,
+        "ny": 1,
+        "heightU": 8,
+        "columns": 1,
+        "rows": 1,
+        "lip": false
+      },
+      "triangles": 4332,
+      "size": [
+        41.5,
+        41.5,
+        56
+      ],
+      "min": [
+        -20.75,
+        -20.75,
+        0
+      ],
+      "max": [
+        20.75,
+        20.75,
+        56
+      ],
+      "volume": 20519.023571351237,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "orientationErrors": 0,
+      "valid": true,
+      "elapsedMs": 280,
+      "logs": [
+        "Could not initialize localization (application path is '/').",
+        "Geometries in cache: 40",
+        "Geometry cache size in bytes: 535032",
+        "CGAL Polyhedrons in cache: 33",
+        "CGAL cache size in bytes: 0",
+        "Total rendering time: 0:00:00.159",
+        "   Top level object is a 3D object (manifold):",
+        "   Status:     NoError",
+        "   Genus:      0",
+        "   Vertices:     4080",
+        "   Facets:       8156"
+      ]
+    },
+    {
+      "key": "bin-2x2-3u-2x2-lip",
+      "model": {
+        "kind": "bin",
+        "nx": 2,
+        "ny": 2,
+        "heightU": 3,
+        "columns": 2,
+        "rows": 2,
+        "lip": true
+      },
+      "triangles": 16876,
+      "size": [
+        83.5,
+        83.5,
+        24.547929763793945
+      ],
+      "min": [
+        -41.75,
+        -41.75,
+        0
+      ],
+      "max": [
+        41.75,
+        41.75,
+        24.547929763793945
+      ],
+      "volume": 54261.92406075014,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "orientationErrors": 0,
+      "valid": true,
+      "elapsedMs": 572,
+      "logs": [
+        "Could not initialize localization (application path is '/').",
+        "Geometries in cache: 56",
+        "Geometry cache size in bytes: 752024",
+        "CGAL Polyhedrons in cache: 46",
+        "CGAL cache size in bytes: 0",
+        "Total rendering time: 0:00:00.294",
+        "   Top level object is a 3D object (manifold):",
+        "   Status:     NoError",
+        "   Genus:      0",
+        "   Vertices:    15756",
+        "   Facets:      31508"
+      ]
+    },
+    {
+      "key": "plate-1x1",
+      "model": {
+        "kind": "plate",
+        "nx": 1,
+        "ny": 1
+      },
+      "triangles": 1320,
+      "size": [
+        42,
+        42,
+        5
+      ],
+      "min": [
+        -21,
+        -21,
+        0
+      ],
+      "max": [
+        21,
+        21,
+        5
+      ],
+      "volume": 1382.78495034636,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "orientationErrors": 0,
+      "valid": true,
+      "elapsedMs": 141,
+      "logs": [
+        "Could not initialize localization (application path is '/').",
+        "ECHO: \"Number of Grids per axes (X, Y)]: [1, 1]\"",
+        "ECHO: \"Final size (in mm): [42, 42, 5]\"",
+        "Geometries in cache: 28",
+        "Geometry cache size in bytes: 146016",
+        "CGAL Polyhedrons in cache: 9",
+        "CGAL cache size in bytes: 0",
+        "Total rendering time: 0:00:00.029",
+        "   Top level object is a 3D object (manifold):",
+        "   Status:     NoError",
+        "   Genus:      1",
+        "   Vertices:      688",
+        "   Facets:       1376"
+      ]
+    },
+    {
+      "key": "plate-2x1",
+      "model": {
+        "kind": "plate",
+        "nx": 2,
+        "ny": 1
+      },
+      "triangles": 2224,
+      "size": [
+        84,
+        42,
+        5
+      ],
+      "min": [
+        -42,
+        -21,
+        0
+      ],
+      "max": [
+        42,
+        21,
+        5
+      ],
+      "volume": 2837.1179758138915,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "orientationErrors": 0,
+      "valid": true,
+      "elapsedMs": 118,
+      "logs": [
+        "Could not initialize localization (application path is '/').",
+        "ECHO: \"Number of Grids per axes (X, Y)]: [2, 1]\"",
+        "ECHO: \"Final size (in mm): [84, 42, 5]\"",
+        "Geometries in cache: 28",
+        "Geometry cache size in bytes: 146016",
+        "CGAL Polyhedrons in cache: 11",
+        "CGAL cache size in bytes: 0",
+        "Total rendering time: 0:00:00.022",
+        "   Top level object is a 3D object (manifold):",
+        "   Status:     NoError",
+        "   Genus:      2",
+        "   Vertices:     1168",
+        "   Facets:       2340"
+      ]
+    },
+    {
+      "key": "plate-5x5",
+      "model": {
+        "kind": "plate",
+        "nx": 5,
+        "ny": 5
+      },
+      "triangles": 23108,
+      "size": [
+        210,
+        210,
+        5
+      ],
+      "min": [
+        -105,
+        -105,
+        0
+      ],
+      "max": [
+        105,
+        105,
+        5
+      ],
+      "volume": 36281.26834328858,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "orientationErrors": 0,
+      "valid": true,
+      "elapsedMs": 453,
+      "logs": [
+        "Could not initialize localization (application path is '/').",
+        "ECHO: \"Number of Grids per axes (X, Y)]: [5, 5]\"",
+        "ECHO: \"Final size (in mm): [210, 210, 5]\"",
+        "Geometries in cache: 28",
+        "Geometry cache size in bytes: 146016",
+        "CGAL Polyhedrons in cache: 34",
+        "CGAL cache size in bytes: 0",
+        "Total rendering time: 0:00:00.148",
+        "   Top level object is a 3D object (manifold):",
+        "   Status:     NoError",
+        "   Genus:      25",
+        "   Vertices:    12208",
+        "   Facets:      24512"
+      ]
+    }
+  ]
+}

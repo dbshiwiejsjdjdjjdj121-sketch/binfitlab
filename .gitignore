@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.vinext/
+.vite/
+.next/
+test-results/
+playwright-report/
+artifacts/
+.env*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+
+.sites-runtime/
+
+# Fetch the official development binary after cloning; do not redistribute it here.
+public/engine/openscad.js
+public/engine/openscad.wasm
+.github/workflows/engine.yml

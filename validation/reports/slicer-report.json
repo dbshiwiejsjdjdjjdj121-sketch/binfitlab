@@ -1,0 +1,183 @@
+{
+  "prusaVersion": "2.9.6",
+  "curaEngineVersion": "5.13.0",
+  "conditions": "CLI generic QA setup; PLA temperatures, 0.4 mm nozzle, 0.2 mm layers. Not a tested printer profile. G-code must not be sent to a real printer.",
+  "results": [
+    {
+      "engine": "prusa",
+      "model": "bin-1x1-2u-1x1-lip",
+      "exitCode": 0,
+      "layers": 88,
+      "expectedHeightMm": 17.547929763793945,
+      "hasExtrusions": true,
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "engine": "cura",
+      "model": "bin-1x1-2u-1x1-lip",
+      "exitCode": 0,
+      "layers": 88,
+      "expectedHeightMm": 17.547929763793945,
+      "hasExtrusions": true,
+      "warnings": [
+        "[2026-09-24 01:04:13.022] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+      ],
+      "passed": true
+    },
+    {
+      "engine": "prusa",
+      "model": "bin-2x3-3u-1x1-lip",
+      "exitCode": 0,
+      "layers": 123,
+      "expectedHeightMm": 24.547929763793945,
+      "hasExtrusions": true,
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "engine": "cura",
+      "model": "bin-2x3-3u-1x1-lip",
+      "exitCode": 0,
+      "layers": 123,
+      "expectedHeightMm": 24.547929763793945,
+      "hasExtrusions": true,
+      "warnings": [
+        "[2026-09-24 01:04:13.622] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+      ],
+      "passed": true
+    },
+    {
+      "engine": "prusa",
+      "model": "bin-2x1-3u-2x1-lip",
+      "exitCode": 0,
+      "layers": 123,
+      "expectedHeightMm": 24.547929763793945,
+      "hasExtrusions": true,
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "engine": "cura",
+      "model": "bin-2x1-3u-2x1-lip",
+      "exitCode": 0,
+      "layers": 123,
+      "expectedHeightMm": 24.547929763793945,
+      "hasExtrusions": true,
+      "warnings": [
+        "[2026-09-24 01:04:14.245] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+      ],
+      "passed": true
+    },
+    {
+      "engine": "prusa",
+      "model": "bin-1x1-8u-1x1-flat",
+      "exitCode": 0,
+      "layers": 280,
+      "expectedHeightMm": 56,
+      "hasExtrusions": true,
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "engine": "cura",
+      "model": "bin-1x1-8u-1x1-flat",
+      "exitCode": 0,
+      "layers": 280,
+      "expectedHeightMm": 56,
+      "hasExtrusions": true,
+      "warnings": [
+        "[2026-09-24 01:04:14.955] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+      ],
+      "passed": true
+    },
+    {
+      "engine": "prusa",
+      "model": "bin-2x2-3u-2x2-lip",
+      "exitCode": 0,
+      "layers": 123,
+      "expectedHeightMm": 24.547929763793945,
+      "hasExtrusions": true,
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "engine": "cura",
+      "model": "bin-2x2-3u-2x2-lip",
+      "exitCode": 0,
+      "layers": 123,
+      "expectedHeightMm": 24.547929763793945,
+      "hasExtrusions": true,
+      "warnings": [
+        "[2026-09-24 01:04:15.791] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+      ],
+      "passed": true
+    },
+    {
+      "engine": "prusa",
+      "model": "plate-1x1",
+      "exitCode": 0,
+      "layers": 24,
+      "expectedHeightMm": 5,
+      "hasExtrusions": true,
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "engine": "cura",
+      "model": "plate-1x1",
+      "exitCode": 0,
+      "layers": 25,
+      "expectedHeightMm": 5,
+      "hasExtrusions": true,
+      "warnings": [
+        "[2026-09-24 01:04:16.118] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+      ],
+      "passed": true
+    },
+    {
+      "engine": "prusa",
+      "model": "plate-2x1",
+      "exitCode": 0,
+      "layers": 25,
+      "expectedHeightMm": 5,
+      "hasExtrusions": true,
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "engine": "cura",
+      "model": "plate-2x1",
+      "exitCode": 0,
+      "layers": 25,
+      "expectedHeightMm": 5,
+      "hasExtrusions": true,
+      "warnings": [
+        "[2026-09-24 01:04:16.325] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+      ],
+      "passed": true
+    },
+    {
+      "engine": "prusa",
+      "model": "plate-5x5",
+      "exitCode": 0,
+      "layers": 25,
+      "expectedHeightMm": 5,
+      "hasExtrusions": true,
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "engine": "cura",
+      "model": "plate-5x5",
+      "exitCode": 0,
+      "layers": 25,
+      "expectedHeightMm": 5,
+      "hasExtrusions": true,
+      "warnings": [
+        "[2026-09-24 01:04:17.331] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+      ],
+      "passed": true
+    }
+  ]
+}

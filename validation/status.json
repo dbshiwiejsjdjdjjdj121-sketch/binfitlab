@@ -1,0 +1,33 @@
+{
+  "browser": {
+    "status": "passed",
+    "evidence": "validation/reports/browser.md",
+    "note": "Nine end-to-end scenarios passed across the final verification runs, including a WebKit smoke check and 20 generate/cancel cycles. Mobile grid aspect ratio regression was fixed and retested."
+  },
+  "geometry": {
+    "status": "passed",
+    "evidence": "validation/reports/geometry-report.json",
+    "note": "8 reference fixtures plus 3 boundary configurations; final mesh checked after 0.005 mm simplification."
+  },
+  "nativeComparison": {
+    "status": "passed",
+    "evidence": "validation/reports/native-comparison.json"
+  },
+  "prusaSlicer": {
+    "status": "passed",
+    "evidence": "validation/reports/slicer-report.json"
+  },
+  "cura": {
+    "status": "passed",
+    "evidence": "validation/reports/slicer-report.json",
+    "note": "CuraEngine 5.13.0 CLI, generic QA settings, 8 fixtures. A harmless reset_flow_duration default warning is recorded. On the thin plate the topmost layer differs from PrusaSlicer; assembled fit remains untested."
+  },
+  "physicalFit": {
+    "status": "pending",
+    "note": "External printed samples and reference-part fit checks have not been performed."
+  },
+  "correspondingSource": {
+    "status": "pending",
+    "note": "Before distributing this preview publicly, archive corresponding source and build information for the exact prebuilt WASM engine and its compiled dependencies."
+  }
+}

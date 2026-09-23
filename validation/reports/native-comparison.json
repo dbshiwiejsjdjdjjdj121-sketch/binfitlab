@@ -1,0 +1,88 @@
+{
+  "nativeVersion": "2026.09.22",
+  "browserEngine": "2025.03.25.wasm24456",
+  "modelCommit": "910e22d8607fd7f5f51ad5e5cbc5287a76810bfd",
+  "simplificationToleranceMm": 0.005,
+  "results": [
+    {
+      "model": "bin-1x1-2u-1x1-lip",
+      "dimensions": [
+        0,
+        0,
+        0
+      ],
+      "volumeRelativeDifference": 0.00027122749673412077,
+      "passed": true
+    },
+    {
+      "model": "bin-2x3-3u-1x1-lip",
+      "dimensions": [
+        0,
+        0,
+        0
+      ],
+      "volumeRelativeDifference": 0.0003658042364296333,
+      "passed": true
+    },
+    {
+      "model": "bin-2x1-3u-2x1-lip",
+      "dimensions": [
+        0,
+        0,
+        0
+      ],
+      "volumeRelativeDifference": 0.0003798474910793977,
+      "passed": true
+    },
+    {
+      "model": "bin-1x1-8u-1x1-flat",
+      "dimensions": [
+        0,
+        0,
+        0
+      ],
+      "volumeRelativeDifference": 0.0004609432298914547,
+      "passed": true
+    },
+    {
+      "model": "bin-2x2-3u-2x2-lip",
+      "dimensions": [
+        0,
+        0,
+        0
+      ],
+      "volumeRelativeDifference": 0.00042155608185309983,
+      "passed": true
+    },
+    {
+      "model": "plate-1x1",
+      "dimensions": [
+        0,
+        0,
+        0
+      ],
+      "volumeRelativeDifference": 0.0012262208704891086,
+      "passed": true
+    },
+    {
+      "model": "plate-2x1",
+      "dimensions": [
+        0,
+        0,
+        0
+      ],
+      "volumeRelativeDifference": 0.0012543312236473173,
+      "passed": true
+    },
+    {
+      "model": "plate-5x5",
+      "dimensions": [
+        0,
+        0,
+        0
+      ],
+      "volumeRelativeDifference": 0.001127282299507142,
+      "passed": true
+    }
+  ]
+}

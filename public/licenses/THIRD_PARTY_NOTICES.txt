@@ -1,0 +1,35 @@
+GridFit Lab — third-party notices
+
+Application code: GNU GPL version 3. See GPL-3.0.txt.
+
+Gridfinity Rebuilt — MIT
+https://github.com/kennetek/gridfinity-rebuilt-openscad
+Commit 910e22d8607fd7f5f51ad5e5cbc5287a76810bfd
+Copyright Kenneth Hodson, Zachary Freedman / Voidstar Lab and contributors.
+Baseplate core: Copyright Arthur Moore 2025, MIT.
+See GRIDFINITY-REBUILT-MIT.txt and the retained source notices.
+
+OpenSCAD WASM — upstream OpenSCAD GPL v2 or later, with compiled dependencies
+including GPL v3 components; this distribution uses GPL v3.
+Version 2025.03.25.wasm24456; git ce5039f8a9545ad5a8cf197b3ca11c0939bc67f1.
+https://github.com/openscad/openscad
+https://github.com/openscad/openscad-wasm
+See OPENSCAD-THIRD-PARTY-LICENSES.md for the upstream license collection.
+Corresponding-source packaging for this exact prebuilt binary is a public
+release prerequisite; see vendor/openscad-source/README.md in the source tree.
+
+Manifold 3.5.3 — Apache-2.0
+https://github.com/elalish/manifold
+Used for bounded STL simplification after OpenSCAD geometry generation.
+
+React / React DOM, Three.js, fflate, Zod, lucide-react, Vinext — MIT.
+Individual available license files accompany this notice.
+
+Independent reference fixture models (test kit only):
+vector76/gridfinity_openscad, MIT, Copyright (c) 2022 Jamie.
+Commit 0e7308cd8fc7fb4191aa69d81175a90d10de751c.
+These are reference implementations, not certified compatibility evidence.
+See REFERENCE-VECTOR76-MIT.txt.
+
+Original Gridfinity system by Zack Freedman. GridFit Lab is unaffiliated with
+the original creator and with other Gridfinity generator websites.

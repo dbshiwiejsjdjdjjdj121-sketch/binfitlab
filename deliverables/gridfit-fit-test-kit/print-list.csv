@@ -1,0 +1,6 @@
+label,file,quantity,purpose,sha256
+A,models/bin-1x1-2u-1x1-lip.stl,2,Our small bin; print two for stacking,34aa6165622947b225d9c9663bed9e9de4798c1d43501dd0ccfb71f3cf8b7b1a
+B,models/bin-2x1-3u-2x1-lip.stl,1,Our divided bin; spans a seam between plates,a2f779984f62161588510e0c470a9812861f0e6de801680359c765f0b573f82a
+C,models/plate-1x1.stl,2,Our plates; place side by side,31bde727aa057bed2c11f860392e04a8877831b41b55282d6fb1ba35760828f3
+R1,reference/reference-bin-1x1-2u.stl,1,Independent vector76 reference bin,a50183bf918fea913fdbd735c5980f7f28c6a6da408edda723a78d83853b3efc
+R2,reference/reference-plate-1x1.stl,1,Independent vector76 reference plate,ad7f04e35e1ae8b2baabbb20a1f764a1a4a731179853e7d227d4632bf6709201

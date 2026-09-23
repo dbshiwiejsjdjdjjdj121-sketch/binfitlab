@@ -1,0 +1,5 @@
+询价模板（尚未发送）
+
+你好，附件是 Gridfinity 配合测试包，共 7 个 PLA 样件。请按 START-HERE.md 和 print-list.csv 报价，拆分打印、配合测试/测量/照片、运费，注明预计工期、打印机、喷嘴及切片软件。切片需按毫米、100% 原比例导入，不要自动缩放或打磨。请先报价，不要直接生产。收货信息和最终付款将由委托人另行确认。
+
+This is a quote request, not a production order. Please quote seven PLA parts plus the documented fit tests, measurements, photographs and delivery separately. Confirm lead time, printer, nozzle and slicer. Do not print before the customer approves the quote.

@@ -1,0 +1,45 @@
+{
+  "name": "gridfit-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "engines": {
+    "node": ">=22.13.0 <23"
+  },
+  "scripts": {
+    "dev": "tsx scripts/prepare-site.ts && vinext dev --hostname 127.0.0.1 --port 3000",
+    "build": "tsx scripts/prepare-site.ts && vinext build",
+    "preview": "node scripts/serve.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "test:browser": "playwright test",
+    "test:geometry": "tsx scripts/check-models.ts",
+    "test:native": "tsx scripts/compare-native.ts",
+    "test:slicers": "python3 scripts/validate-slicers.py",
+    "check:release": "tsx scripts/release-gate.ts"
+  },
+  "dependencies": {
+    "fflate": "0.8.3",
+    "lucide-react": "0.468.0",
+    "manifold-3d": "3.5.3",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "three": "0.186.0",
+    "vinext": "1.0.0-beta.11",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
+    "@playwright/test": "1.58.2",
+    "@types/node": "22.19.15",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@types/three": "0.183.1",
+    "@vitejs/plugin-react": "6.0.0",
+    "prettier": "3.9.9",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vite": "8.3.0"
+  }
+}

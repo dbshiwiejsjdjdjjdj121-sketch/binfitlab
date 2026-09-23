@@ -1,0 +1,39 @@
+{
+  "hostname": "binfitlab.com",
+  "captured": "2026-09-24",
+  "records": [
+    {
+      "type": "ALIAS",
+      "host": "",
+      "value": "uixie.porkbun.com",
+      "ttl": 600
+    },
+    {
+      "type": "CNAME",
+      "host": "*",
+      "value": "uixie.porkbun.com",
+      "ttl": 600
+    },
+    {
+      "type": "MX",
+      "host": "",
+      "value": "fwd1.porkbun.com",
+      "priority": 10,
+      "ttl": 600
+    },
+    {
+      "type": "MX",
+      "host": "",
+      "value": "fwd2.porkbun.com",
+      "priority": 20,
+      "ttl": 600
+    },
+    {
+      "type": "TXT",
+      "host": "",
+      "value": "v=spf1 include:_spf.porkbun.com ~all",
+      "ttl": 600
+    }
+  ],
+  "note": "Two existing _acme-challenge TXT records were observed and preserved."
+}

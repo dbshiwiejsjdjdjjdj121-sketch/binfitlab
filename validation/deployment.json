@@ -1,0 +1,10 @@
+{
+  "provider": "OpenAI Sites",
+  "siteUrl": "https://binfitlab.dbshiwiejsjdjdjjdj12.chatgpt.site",
+  "domain": "binfitlab.com",
+  "audience": "private",
+  "domainStatus": "active",
+  "tlsStatus": "active",
+  "checkedAt": "2026-09-23T17:42:23Z",
+  "note": "Public beta is being prepared. DNS and TLS are already configured."
+}

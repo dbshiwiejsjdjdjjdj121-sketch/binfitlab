@@ -1,0 +1,513 @@
+{
+  "date": "2026-09-23T17:49:32.279Z",
+  "engine": "2025.03.25.wasm24456",
+  "type": "Nominal CAD collision sweep, not a print or physical fit test",
+  "limit": "XY centered. Z sampled every 0.25 mm. Collision threshold 0.001 mm3. Material shrinkage, extrusion, support, adhesion, warping, surface roughness and insertion forces are not simulated.",
+  "inputs": [
+    {
+      "path": "artifacts/test-kit/models/bin-1x1-2u-1x1-lip.stl",
+      "report": {
+        "triangles": 5944,
+        "size": [
+          41.5,
+          41.5,
+          17.547929763793945
+        ],
+        "min": [
+          -20.75,
+          -20.75,
+          0
+        ],
+        "max": [
+          20.75,
+          20.75,
+          17.547929763793945
+        ],
+        "volume": 13691.457679860889,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0,
+        "orientationErrors": 0,
+        "valid": true
+      }
+    },
+    {
+      "path": "artifacts/test-kit/models/plate-1x1.stl",
+      "report": {
+        "triangles": 1320,
+        "size": [
+          42,
+          42,
+          5
+        ],
+        "min": [
+          -21,
+          -21,
+          0
+        ],
+        "max": [
+          21,
+          21,
+          5
+        ],
+        "volume": 1382.78495034636,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0,
+        "orientationErrors": 0,
+        "valid": true
+      }
+    },
+    {
+      "path": "artifacts/test-kit/models/bin-2x1-3u-2x1-lip.stl",
+      "report": {
+        "triangles": 9612,
+        "size": [
+          83.5,
+          41.5,
+          24.547929763793945
+        ],
+        "min": [
+          -41.75,
+          -20.75,
+          0
+        ],
+        "max": [
+          41.75,
+          20.75,
+          24.547929763793945
+        ],
+        "volume": 28730.048650440378,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0,
+        "orientationErrors": 0,
+        "valid": true
+      }
+    },
+    {
+      "path": "deliverables/gridfit-fit-test-kit/reference/reference-bin-1x1-2u.stl",
+      "report": {
+        "triangles": 1570,
+        "size": [
+          41.5,
+          41.5,
+          17.75
+        ],
+        "min": [
+          -20.75,
+          -20.75,
+          0
+        ],
+        "max": [
+          20.75,
+          20.75,
+          17.75
+        ],
+        "volume": 11489.033424417006,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0,
+        "orientationErrors": 0,
+        "valid": true
+      }
+    },
+    {
+      "path": "deliverables/gridfit-fit-test-kit/reference/reference-plate-1x1.stl",
+      "report": {
+        "triangles": 528,
+        "size": [
+          42,
+          42,
+          4.760350227355957
+        ],
+        "min": [
+          -21,
+          -21,
+          0
+        ],
+        "max": [
+          21,
+          21,
+          4.760350227355957
+        ],
+        "volume": 1230.9176392913657,
+        "boundaryEdges": 0,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0,
+        "orientationErrors": 0,
+        "valid": true
+      }
+    }
+  ],
+  "results": [
+    {
+      "label": "Our bin / our plate",
+      "bin": "artifacts/test-kit/models/bin-1x1-2u-1x1-lip.stl",
+      "base": "artifacts/test-kit/models/plate-1x1.stl",
+      "firstNoCollisionOffsetMm": 0.25,
+      "samples": [
+        {
+          "zMm": 0,
+          "intersectionMm3": 3.617700890362389
+        },
+        {
+          "zMm": 0.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 0.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 0.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 5,
+          "intersectionMm3": 0
+        }
+      ]
+    },
+    {
+      "label": "Our bin / independent plate",
+      "bin": "artifacts/test-kit/models/bin-1x1-2u-1x1-lip.stl",
+      "base": "deliverables/gridfit-fit-test-kit/reference/reference-plate-1x1.stl",
+      "firstNoCollisionOffsetMm": 0,
+      "samples": [
+        {
+          "zMm": 0,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 0.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 0.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 0.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 5,
+          "intersectionMm3": 0
+        }
+      ]
+    },
+    {
+      "label": "Independent bin / our plate",
+      "bin": "deliverables/gridfit-fit-test-kit/reference/reference-bin-1x1-2u.stl",
+      "base": "artifacts/test-kit/models/plate-1x1.stl",
+      "firstNoCollisionOffsetMm": 0.25,
+      "samples": [
+        {
+          "zMm": 0,
+          "intersectionMm3": 3.9495304754098894
+        },
+        {
+          "zMm": 0.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 0.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 0.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 5,
+          "intersectionMm3": 0
+        }
+      ]
+    },
+    {
+      "label": "Our 2x1 bin across two edge-to-edge 1x1 plates",
+      "bin": "artifacts/test-kit/models/bin-2x1-3u-2x1-lip.stl",
+      "base": "two our plates, center separation 42 mm",
+      "firstNoCollisionOffsetMm": 0.25,
+      "samples": [
+        {
+          "zMm": 0,
+          "intersectionMm3": 10.195519525503006
+        },
+        {
+          "zMm": 0.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 0.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 0.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 1.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 2.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 3.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4.25,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4.5,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 4.75,
+          "intersectionMm3": 0
+        },
+        {
+          "zMm": 5,
+          "intersectionMm3": 0
+        }
+      ]
+    }
+  ]
+}
