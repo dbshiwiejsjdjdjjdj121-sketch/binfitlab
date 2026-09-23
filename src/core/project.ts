@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const PROFILE = "classic42-rebuilt-v1";
 export const MODEL_COMMIT = "910e22d8607fd7f5f51ad5e5cbc5287a76810bfd";
-export const ENGINE_VERSION = "2025.03.25.wasm24456";
+export const ENGINE_VERSION = "2026.09.24.binfit1";
 export const PITCH = 42;
 export const UNIT_HEIGHT = 7;
 const count = (max: number) => z.number().int().min(1).max(max);

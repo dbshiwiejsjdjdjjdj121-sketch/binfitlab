@@ -1,100 +1,105 @@
-[
-  {
-    "model": {
-      "kind": "bin",
-      "nx": 1,
-      "ny": 1,
-      "heightU": 2,
-      "columns": 4,
-      "rows": 4,
-      "lip": true
+{
+  "date": "2026-09-23T18:49:30.859Z",
+  "engine": "2026.09.24.binfit1",
+  "modelCommit": "910e22d8607fd7f5f51ad5e5cbc5287a76810bfd",
+  "results": [
+    {
+      "model": {
+        "kind": "bin",
+        "nx": 1,
+        "ny": 1,
+        "heightU": 2,
+        "columns": 4,
+        "rows": 4,
+        "lip": true
+      },
+      "triangles": 50696,
+      "size": [
+        41.5,
+        41.5,
+        17.547929763793945
+      ],
+      "min": [
+        -20.75,
+        -20.75,
+        0
+      ],
+      "max": [
+        20.75,
+        20.75,
+        17.547929763793945
+      ],
+      "volume": 15551.116227791006,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "orientationErrors": 0,
+      "valid": true,
+      "elapsedMs": 1661
     },
-    "triangles": 50696,
-    "size": [
-      41.5,
-      41.5,
-      17.547929763793945
-    ],
-    "min": [
-      -20.75,
-      -20.75,
-      0
-    ],
-    "max": [
-      20.75,
-      20.75,
-      17.547929763793945
-    ],
-    "volume": 15551.185014562076,
-    "boundaryEdges": 0,
-    "nonManifoldEdges": 0,
-    "degenerateTriangles": 0,
-    "orientationErrors": 0,
-    "valid": true,
-    "elapsedMs": 1444.564041
-  },
-  {
-    "model": {
-      "kind": "bin",
-      "nx": 8,
-      "ny": 8,
-      "heightU": 12,
-      "columns": 6,
-      "rows": 6,
-      "lip": true
+    {
+      "model": {
+        "kind": "bin",
+        "nx": 8,
+        "ny": 8,
+        "heightU": 12,
+        "columns": 6,
+        "rows": 6,
+        "lip": true
+      },
+      "triangles": 152388,
+      "size": [
+        335.5,
+        335.5,
+        87.54792785644531
+      ],
+      "min": [
+        -167.75,
+        -167.75,
+        0
+      ],
+      "max": [
+        167.75,
+        167.75,
+        87.54792785644531
+      ],
+      "volume": 1017536.6774694875,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "orientationErrors": 0,
+      "valid": true,
+      "elapsedMs": 3646
     },
-    "triangles": 152388,
-    "size": [
-      335.5,
-      335.5,
-      87.54792785644531
-    ],
-    "min": [
-      -167.75,
-      -167.75,
-      0
-    ],
-    "max": [
-      167.75,
-      167.75,
-      87.54792785644531
-    ],
-    "volume": 1017545.7503794245,
-    "boundaryEdges": 0,
-    "nonManifoldEdges": 0,
-    "degenerateTriangles": 0,
-    "orientationErrors": 0,
-    "valid": true,
-    "elapsedMs": 3429.7189579999995
-  },
-  {
-    "model": {
-      "kind": "plate",
-      "nx": 8,
-      "ny": 8
-    },
-    "triangles": 58518,
-    "size": [
-      336,
-      336,
-      5
-    ],
-    "min": [
-      -168,
-      -168,
-      0
-    ],
-    "max": [
-      168,
-      168,
-      5
-    ],
-    "volume": 92988.90062610601,
-    "boundaryEdges": 0,
-    "nonManifoldEdges": 0,
-    "degenerateTriangles": 0,
-    "orientationErrors": 0,
-    "valid": true,
-    "elapsedMs": 995.5307499999999
-  }
-]
+    {
+      "model": {
+        "kind": "plate",
+        "nx": 8,
+        "ny": 8
+      },
+      "triangles": 58518,
+      "size": [
+        336,
+        336,
+        5
+      ],
+      "min": [
+        -168,
+        -168,
+        0
+      ],
+      "max": [
+        168,
+        168,
+        5
+      ],
+      "volume": 92988.90062610604,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "degenerateTriangles": 0,
+      "orientationErrors": 0,
+      "valid": true,
+      "elapsedMs": 1145
+    }
+  ]
+}

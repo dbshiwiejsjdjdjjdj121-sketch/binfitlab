@@ -1,0 +1,47 @@
+Could not initialize localization (application path is '/').
+Fontconfig error: Cannot load default config file: File not found
+OpenSCAD Version: 2026.09.24.binfit1 (git 04834adb1ba3c9a6e4160747c91cbadbce9c37b3)
+System information: Emscripten 6.0.5 #1 wasm32 1 CPU 4.00 GB RAM
+User Agent: OpenSCAD/2026.09.24.binfit1 (git 04834adb1ba3c9a6e4160747c91cbadbce9c37b3) (Emscripten wasm32)
+Compiler: Clang "24.0.0git (https:/github.com/llvm/llvm-project abd3b3a1445b5a8eeffae5c3912883faa9287fb7)"
+MinGW build: No
+Debug build: No
+Boost version: 1_87
+Eigen version: 3.5.0
+CGAL version, kernels: 6.0.3-I-900, Cartesian<Gmpq>, Extended_cartesian<Gmpq>
+OpenCSG version: <not enabled>
+Clipper2 version: 2.0.1
+Manifold version: 3.5.1
+Qt version: Qt disabled - Commandline Test Version
+GLib version: 2.89.3
+lodepng version: 20260102
+libzip version: 1.11.4
+fontconfig version: 2.18.2
+freetype version: 2.14.3
+harfbuzz version: 14.3.0
+cairo version: (not enabled)
+lib3mf version: 2.3.2
+mi-malloc version: <not enabled>
+Features: roof, input-driver-dbus, lazy-union, vertex-object-renderers-indexing, textmetrics, import-function, object-function, predictible-output, vector-swizzle, discretization-by-error, ai-features
+Application Path: /
+Documents Path: /home/web_user/.local/share
+User Documents Path: /home/web_user
+Resource Path: /
+User Library Path: 
+User Examples Path: 
+User Config Path: 
+Backup Path: 
+OPENSCADPATH: <not set>
+OpenSCAD library path:
+  
+  /
+
+OPENSCAD_FONT_PATH: <not set>
+OpenSCAD font path:
+  /fonts
+  /home/web_user/.local/share/fonts
+  /usr/local/share/fonts
+  /usr/share/fonts
+
+
+Can't create OpenGL OffscreenView: Unable to create FBO. Exiting.

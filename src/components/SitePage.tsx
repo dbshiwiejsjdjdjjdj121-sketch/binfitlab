@@ -547,6 +547,35 @@ function Content({ path }: { path: string }) {
             </tr>
           </tbody>
         </table>
+        <h2>Recorded software checks</h2>
+        <p>
+          Eight representative models were compared with native OpenSCAD and
+          sliced with both PrusaSlicer and Cura. Three additional boundary
+          configurations were checked for mesh validity and dimensions. Four
+          nominal assembly checks compare our parts with each other and with
+          independently sourced reference parts, including a bin across a plate
+          seam. These checks do not measure printed friction, shrinkage or fit.
+        </p>
+        <p>
+          <a
+            href={`${site.sourceUrl}/tree/codex/engine-build/validation/reports`}
+          >
+            Read the test settings and results →
+          </a>
+        </p>
+        <p>
+          Want to help verify real-world fit? Our small test kit contains STL
+          samples, independent reference parts, a measurement sheet and a
+          step-by-step test procedure. Slice it using your own printer profile.
+          Send results to <a href={`mailto:${site.contact}`}>{site.contact}</a>.
+        </p>
+        <p>
+          <a
+            href={`${site.sourceUrl}/raw/refs/heads/codex/engine-build/deliverables/gridfit-fit-test-kit.zip`}
+          >
+            Download the physical fit test kit (ZIP) →
+          </a>
+        </p>
         <h2>Supported in this version</h2>
         <ul>
           <li>
@@ -677,6 +706,11 @@ function Content({ path }: { path: string }) {
           <a href={site.sourceUrl}>View this website’s source code →</a>
         </p>
       )}
+      <p>
+        <a href={site.engineSourceUrl}>
+          Download engine source and build records →
+        </a>
+      </p>
       <h2>Testing, with clear limits</h2>
       <p>
         We publish model provenance and check the geometry before export.

@@ -32,7 +32,7 @@ npm run preview
 ## Geometry provenance
 
 - Rebuilt commit: `910e22d8607fd7f5f51ad5e5cbc5287a76810bfd` (MIT), vendored unchanged.
-- OpenSCAD browser build: `2025.03.25.wasm24456`, git `ce5039f8a9545ad5a8cf197b3ca11c0939bc67f1`, Manifold backend.
+- OpenSCAD browser build: `2026.09.24.binfit1`, git `04834adb1ba3c9a6e4160747c91cbadbce9c37b3`, Manifold backend.
 - Export postprocessing: `manifold-3d@3.5.3`, maximum surface simplification **0.005 mm**, with before/after volume and bounds checks. This avoids tiny rounded-lip faces collapsing under Cura's 0.03 mm vertex merge. STL vertices are welded at 0.00001 mm; collapsed faces are removed. Holes are never filled.
 - Preview and download use the same processed bytes. STL coordinates are in millimeters.
 - `vendor/manifest.json` records the binary and source hashes. Source and license follow-up is documented in `vendor/openscad-source/README.md`.
@@ -57,15 +57,21 @@ PRUSA_SLICER=/path/to/PrusaSlicer CURA_ENGINE=/path/to/CuraEngine CURA_DEFINITIO
 
 See `validation/status.json` and `validation/reports/` for recorded evidence. `artifacts/` contains regenerated files, screenshots and QA G-code. **QA G-code is for inspection only and must not be sent to a real printer.** The external test kit includes STL files, not printer-specific G-code.
 
-## Public release
+## Public beta
 
-The domain **binfitlab.com** and its HTTPS certificate are configured. The website is currently hosted as **owner-private** while a source-captured engine build is prepared. Contact: yiwangyuai@gmail.com. Application source is published at https://github.com/dbshiwiejsjdjdjjdj121-sketch/binfitlab.
+Production domain: https://binfitlab.com. Maintainer contact: yiwangyuai@gmail.com.
 
-Physical fit testing remains incomplete. The user requested an initial public beta with accurate testing labels. A beta needs all software checks and complete corresponding source; a stable release also needs physical fit evidence. The exact dependency sources of the legacy prebuilt engine have not been established. A fresh upstream build with pinned dependencies is prepared in the public repository's `engine/` directory; its GitHub workflow currently needs the owner's authenticated browser session because the CLI token cannot write workflows.
+This release is a **public beta with physical fit testing pending**. All software checks were repeated against the source-captured engine. The application source is public; the [engine release](https://github.com/dbshiwiejsjdjdjjdj121-sketch/binfitlab/releases/tag/engine-2026.09.24-binfit1) includes the actual corresponding source tree, dependency sources, patches, checksums and build records. See `vendor/openscad-source/BUILDING.md`.
 
-Production configuration uses `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_SOURCE_URL`, `NEXT_PUBLIC_PUBLIC_RELEASE=true`, and `NEXT_PUBLIC_RELEASE_CHANNEL=beta` or `stable`. Export these environment variables when building (see `.env.example`). `npm run check:release` and the production build block an incomplete release. After the evidence is complete, update the compatibility copy from actual results, build the static site, verify canonical URLs and sitemap, deploy, and verify the domain in Search Console.
+Production configuration is explicit:
 
-Run `npx tsx scripts/check-assembly.ts` after regenerating the geometry fixtures to compare nominal assembly collisions with independently sourced reference parts. See `validation/reports/digital-assembly.md` for its assumptions and limits.
+```sh
+NEXT_PUBLIC_PUBLIC_RELEASE=true NEXT_PUBLIC_RELEASE_CHANNEL=beta npm run build
+```
+
+The default configuration remains a non-indexable local preview. A public beta requires completed software/source checks; `stable` also requires physical fit evidence. `npm run check:release` enforces these gates. The nine public pages have canonical URLs, a sitemap and crawlable content. Engine assets use a hash-derived directory to prevent mixed browser caches.
+
+`deliverables/gridfit-fit-test-kit.zip` contains seven sample parts, independent reference models, English/Chinese test instructions, a quote-request draft and results sheet. No printing service has been contacted or paid. Physical tolerances and real drawer clearance must still be measured. Run `npm run test:boundaries` and `npm run test:assembly` after replacing the engine. `scripts/plot-slices.py` plots actual G-code extrusion paths for software review; QA G-code is never a printer-ready download.
 
 ## License
 

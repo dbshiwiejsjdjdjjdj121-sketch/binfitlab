@@ -1,9 +1,13 @@
 // Digital nominal-geometry check. This cannot establish printed tolerances.
 import { readFileSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import Module from "manifold-3d";
 import { normalizeStl, inspectStl } from "../src/core/mesh";
 const api = await Module();
 api.setup();
+const fixtureRecord = JSON.parse(
+  readFileSync("artifacts/geometry-report.json", "utf8"),
+);
 function load(path: string) {
   const bytes = normalizeStl(readFileSync(path)),
     report = inspectStl(bytes);
@@ -68,6 +72,10 @@ function check(
     positioned.delete();
   }
   const first = rows.find((r) => r.intersectionMm3 < 0.001);
+  if (!first || first.zMm > 0.5)
+    throw new Error(
+      `${label}: nominal seating offset exceeded the 0.5 mm regression limit.`,
+    );
   results.push({
     label,
     bin: bin.path,
@@ -93,11 +101,16 @@ try {
   joined.delete();
   const record = {
     date: new Date().toISOString(),
-    engine: "2025.03.25.wasm24456",
+    engine: fixtureRecord.engine,
+    modelCommit: fixtureRecord.modelCommit,
     type: "Nominal CAD collision sweep, not a print or physical fit test",
     limit:
       "XY centered. Z sampled every 0.25 mm. Collision threshold 0.001 mm3. Material shrinkage, extrusion, support, adhesion, warping, surface roughness and insertion forces are not simulated.",
-    inputs: pieces.map(({ path, report }) => ({ path, report })),
+    inputs: pieces.map(({ path, report }) => ({
+      path,
+      report,
+      sha256: createHash("sha256").update(readFileSync(path)).digest("hex"),
+    })),
     results,
   };
   writeFileSync(

@@ -25,7 +25,7 @@ shutil.copyfile(ROOT / 'vendor/reference-vector76/LICENSE', OUT / 'licenses/REFE
 for report in ['geometry-report.json','native-comparison.json','slicer-report.json']:
     shutil.copyfile(ROOT / 'artifacts' / report, OUT / 'reports' / report)
 shutil.copytree(ROOT / 'vendor/reference-vector76', OUT / 'reference/source', dirs_exist_ok=True)
-instructions = '''# GridFit Lab external fit test / 外部实物配合测试
+instructions = '''# BinFit Lab external fit test / 外部实物配合测试
 
 This is a test kit, not a statement of certified compatibility. 这是待验证的样件包。
 

@@ -2,14 +2,17 @@ import { modelSource } from "./scad";
 import { inspectStl } from "./mesh";
 import { simplifyStl } from "./simplify";
 import { modelSchema } from "./project";
+import { ENGINE_ASSET_ROOT } from "./engine-assets";
+// Keep the adapter, JavaScript, WASM and model library on one cache revision.
+const engineAsset = (name: string) => `${ENGINE_ASSET_ROOT}${name}`;
 self.onmessage = async (e: MessageEvent) => {
   const { jobId, model } = e.data,
     logs: string[] = [],
     start = performance.now();
   try {
     const validated = modelSchema.parse(model);
-    const moduleUrl = "/engine/run.mjs";
-    const kernelUrl = "/engine/manifold.js";
+    const moduleUrl = engineAsset("run.mjs");
+    const kernelUrl = engineAsset("manifold.js");
     const [
       { renderScad },
       { default: Module },
@@ -19,9 +22,9 @@ self.onmessage = async (e: MessageEvent) => {
     ] = await Promise.all([
       import(/* @vite-ignore */ moduleUrl),
       import(/* @vite-ignore */ kernelUrl),
-      fetch("/engine/rebuilt.json"),
-      fetch("/engine/openscad.wasm"),
-      fetch("/engine/manifold.wasm"),
+      fetch(engineAsset("rebuilt.json")),
+      fetch(engineAsset("openscad.wasm")),
+      fetch(engineAsset("manifold.wasm")),
     ]);
     if (!filesResponse.ok || !wasmResponse.ok || !kernelResponse.ok)
       throw new Error(

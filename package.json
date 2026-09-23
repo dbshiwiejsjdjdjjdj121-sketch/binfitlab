@@ -17,7 +17,9 @@
     "test:geometry": "tsx scripts/check-models.ts",
     "test:native": "tsx scripts/compare-native.ts",
     "test:slicers": "python3 scripts/validate-slicers.py",
-    "check:release": "tsx scripts/release-gate.ts"
+    "check:release": "tsx scripts/release-gate.ts",
+    "test:boundaries": "tsx scripts/check-boundaries.ts",
+    "test:assembly": "tsx scripts/check-assembly.ts"
   },
   "dependencies": {
     "fflate": "0.8.3",

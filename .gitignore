@@ -13,7 +13,9 @@ artifacts/
 
 .sites-runtime/
 
-# Fetch the official development binary after cloning; do not redistribute it here.
+/public/engine/revisions/
+
+# Fetch the hash-verified engine from the published corresponding-source release.
 public/engine/openscad.js
 public/engine/openscad.wasm
 .github/workflows/engine.yml

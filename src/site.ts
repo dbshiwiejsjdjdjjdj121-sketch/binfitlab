@@ -1,5 +1,7 @@
+import engineManifest from "../vendor/manifest.json";
 export const site = {
   name: "BinFit Lab",
+  engineSourceUrl: engineManifest.releaseUrl,
   origin: process.env.NEXT_PUBLIC_SITE_URL || "https://binfitlab.com",
   publicRelease: process.env.NEXT_PUBLIC_PUBLIC_RELEASE === "true",
   releaseChannel: process.env.NEXT_PUBLIC_RELEASE_CHANNEL || "preview",

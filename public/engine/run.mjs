@@ -1,7 +1,17 @@
 // Adapter for the unmodified, pinned OpenSCAD WASM distribution.
 import OpenSCAD from './openscad.js';
 export async function renderScad(source, files, wasmBinary, log = () => {}) {
-  const app = await OpenSCAD({ noInitialRun: true, wasmBinary, print: log, printErr: log });
+  // Emscripten 6's web build uses instantiateWasm rather than wasmBinary.
+  // Compile first so a corrupt/incompatible binary rejects this task directly.
+  const compiled = await WebAssembly.compile(wasmBinary);
+  const app = await OpenSCAD({
+    noInitialRun: true, noExitRuntime: true, print: log, printErr: log,
+    instantiateWasm(imports, receive) {
+      const instance = new WebAssembly.Instance(compiled, imports);
+      receive(instance);
+      return instance.exports;
+    },
+  });
   for (const [path, content] of Object.entries(files)) {
     const full = '/rebuilt/' + path;
     app.FS.mkdirTree(full.slice(0, full.lastIndexOf('/')));

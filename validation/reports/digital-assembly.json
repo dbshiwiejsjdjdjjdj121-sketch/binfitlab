@@ -1,13 +1,14 @@
 {
-  "date": "2026-09-23T17:49:32.279Z",
-  "engine": "2025.03.25.wasm24456",
+  "date": "2026-09-23T18:49:31.616Z",
+  "engine": "2026.09.24.binfit1",
+  "modelCommit": "910e22d8607fd7f5f51ad5e5cbc5287a76810bfd",
   "type": "Nominal CAD collision sweep, not a print or physical fit test",
   "limit": "XY centered. Z sampled every 0.25 mm. Collision threshold 0.001 mm3. Material shrinkage, extrusion, support, adhesion, warping, surface roughness and insertion forces are not simulated.",
   "inputs": [
     {
       "path": "artifacts/test-kit/models/bin-1x1-2u-1x1-lip.stl",
       "report": {
-        "triangles": 5944,
+        "triangles": 5938,
         "size": [
           41.5,
           41.5,
@@ -23,13 +24,14 @@
           20.75,
           17.547929763793945
         ],
-        "volume": 13691.457679860889,
+        "volume": 13691.408811469528,
         "boundaryEdges": 0,
         "nonManifoldEdges": 0,
         "degenerateTriangles": 0,
         "orientationErrors": 0,
         "valid": true
-      }
+      },
+      "sha256": "1757d702a346f9558f4be5ff76d2063d169d65f7a22adf7b787922a7db1191f6"
     },
     {
       "path": "artifacts/test-kit/models/plate-1x1.stl",
@@ -56,7 +58,8 @@
         "degenerateTriangles": 0,
         "orientationErrors": 0,
         "valid": true
-      }
+      },
+      "sha256": "4342e639debf782e2195c5c4497ffeb3333a18e3c3a5228da51328c95875bc2c"
     },
     {
       "path": "artifacts/test-kit/models/bin-2x1-3u-2x1-lip.stl",
@@ -77,13 +80,14 @@
           20.75,
           24.547929763793945
         ],
-        "volume": 28730.048650440378,
+        "volume": 28730.0593192298,
         "boundaryEdges": 0,
         "nonManifoldEdges": 0,
         "degenerateTriangles": 0,
         "orientationErrors": 0,
         "valid": true
-      }
+      },
+      "sha256": "31ce83b6076b8b1d209d8a3e99e94ead453321364c9a2f3f4f42de18cdea45fa"
     },
     {
       "path": "deliverables/gridfit-fit-test-kit/reference/reference-bin-1x1-2u.stl",
@@ -110,7 +114,8 @@
         "degenerateTriangles": 0,
         "orientationErrors": 0,
         "valid": true
-      }
+      },
+      "sha256": "a50183bf918fea913fdbd735c5980f7f28c6a6da408edda723a78d83853b3efc"
     },
     {
       "path": "deliverables/gridfit-fit-test-kit/reference/reference-plate-1x1.stl",
@@ -137,7 +142,8 @@
         "degenerateTriangles": 0,
         "orientationErrors": 0,
         "valid": true
-      }
+      },
+      "sha256": "ad7f04e35e1ae8b2baabbb20a1f764a1a4a731179853e7d227d4632bf6709201"
     }
   ],
   "results": [
@@ -149,7 +155,7 @@
       "samples": [
         {
           "zMm": 0,
-          "intersectionMm3": 3.617700890362389
+          "intersectionMm3": 3.61770089036241
         },
         {
           "zMm": 0.25,
@@ -425,7 +431,7 @@
       "samples": [
         {
           "zMm": 0,
-          "intersectionMm3": 10.195519525503006
+          "intersectionMm3": 10.195455352498835
         },
         {
           "zMm": 0.25,

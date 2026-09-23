@@ -13,7 +13,7 @@ const paths = [
   "/about/",
   "/privacy/",
 ];
-test("all nine pages are static, have unique metadata, and preview is not indexable", async ({
+test("all nine pages are static, have unique metadata, and match the release indexing policy", async ({
   request,
 }) => {
   const titles = new Set<string>();
@@ -21,8 +21,12 @@ test("all nine pages are static, have unique metadata, and preview is not indexa
     const r = await request.get(path);
     expect(r.status()).toBe(200);
     const html = await r.text();
-    expect(html).toContain("noindex,nofollow");
-    expect(html).toContain('rel="canonical"');
+    expect(html).toContain(
+      process.env.PUBLIC_RELEASE_TEST === "true"
+        ? "index,follow"
+        : "noindex,nofollow",
+    );
+    expect(html).toContain(`href="https://binfitlab.com${path}"`);
     expect(html).toContain("application/ld+json");
     expect(html).toMatch(/<h1/);
     const title = html.match(/<title[^>]*>(.*?)<\/title>/)?.[1];
@@ -30,13 +34,30 @@ test("all nine pages are static, have unique metadata, and preview is not indexa
     expect(titles.has(title!)).toBe(false);
     titles.add(title!);
   }
+  const robots = await (await request.get("/robots.txt")).text();
+  const sitemap = await (await request.get("/sitemap.xml")).text();
+  if (process.env.PUBLIC_RELEASE_TEST === "true") {
+    expect(robots).toContain("Allow: /");
+    expect(robots).toContain("Sitemap: https://binfitlab.com/sitemap.xml");
+    for (const path of paths)
+      expect(sitemap).toContain(`<loc>https://binfitlab.com${path}</loc>`);
+    expect((sitemap.match(/<loc>/g) || []).length).toBe(9);
+  } else {
+    expect(robots).toContain("Disallow: /");
+    expect(sitemap).not.toContain("<loc>");
+  }
   expect((await request.get("/nonexistent/")).status()).toBe(404);
 });
 test("browser generates a checked STL; parameter changes invalidate old exports", async ({
   page,
 }) => {
   const errors: string[] = [];
+  const engineRequests = new Set<string>();
   page.on("pageerror", (e) => errors.push(e.message));
+  page.on("request", (request) => {
+    const url = new URL(request.url());
+    if (url.pathname.startsWith("/engine/")) engineRequests.add(url.href);
+  });
   await page.goto("/gridfinity-bin-generator/");
   const downloadButton = page.getByRole("button", {
     name: "Download STL",
@@ -51,6 +72,19 @@ test("browser generates a checked STL; parameter changes invalidate old exports"
   const report = inspectStl(readFileSync((await file.path())!));
   expect(report.valid).toBe(true);
   expect(report.size[1]).toBeCloseTo(125.5, 2);
+  const engineUrls = [...engineRequests].map((url) => new URL(url));
+  expect(engineUrls.some((url) => url.pathname.endsWith("openscad.js"))).toBe(
+    true,
+  );
+  expect(engineUrls.some((url) => url.pathname.endsWith("openscad.wasm"))).toBe(
+    true,
+  );
+  expect(
+    engineUrls.every((url) => url.pathname.startsWith("/engine/revisions/")),
+  ).toBe(true);
+  expect(
+    new Set(engineUrls.map((url) => url.pathname.split("/")[3])).size,
+  ).toBe(1);
   await page
     .getByRole("spinbutton", { name: "Width · X", exact: true })
     .fill("1");
@@ -124,13 +158,11 @@ test("drawer layout persists, supports undo, blocks overlap, imports safely and 
   const manifest = JSON.parse(strFromU8(files["manifest.json"]));
   expect(manifest.bins).toHaveLength(3);
   expect(manifest.heightCheck).toMatch(/Not checked/);
-  await page
-    .locator("input[type=file]")
-    .setInputFiles({
-      name: "bad.json",
-      mimeType: "application/json",
-      buffer: Buffer.from('{"schemaVersion":9}'),
-    });
+  await page.locator("input[type=file]").setInputFiles({
+    name: "bad.json",
+    mimeType: "application/json",
+    buffer: Buffer.from('{"schemaVersion":9}'),
+  });
   await expect(
     page.getByRole("status").filter({ hasText: "Could not import" }),
   ).toBeVisible();

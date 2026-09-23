@@ -1,28 +1,15 @@
 # Exact browser engine provenance
 
-The unmodified binary in `public/engine/openscad.{js,wasm}` is the official
-`OpenSCAD-2025.03.25.wasm24456-WebAssembly-web.zip` build, archive SHA-256
-`0968af31b9c9b3bba68d9031de1695ccae51c32231a1aab4ef27b18c86379f3b`.
+The browser engine is our source-captured OpenSCAD build `2026.09.24.binfit1`, commit `04834adb1ba3c9a6e4160747c91cbadbce9c37b3`. The JavaScript and WASM files are used unchanged; the local adapter uses the supported `instantiateWasm` hook and keeps the runtime alive until the Worker is terminated.
 
-Running that binary with `--info` reports OpenSCAD commit
-`ce5039f8a9545ad5a8cf197b3ca11c0939bc67f1`, Emscripten 3.1.34, Boost 1.82,
-Eigen 3.3.90, CGAL 5.4.5-I-900, Clipper2 1.5.2, Manifold 3.0.1, GLib 2.75.0,
-libzip 1.9.99, fontconfig 2.14.1, FreeType 2.13.0 and HarfBuzz 7.1.0.
+[Engine, complete corresponding source and build records](https://github.com/dbshiwiejsjdjdjjdj121-sketch/binfitlab/releases/tag/engine-2026.09.24-binfit1)
 
-Upstream source:
-https://github.com/openscad/openscad/tree/ce5039f8a9545ad5a8cf197b3ca11c0939bc67f1
+[Successful build run](https://github.com/dbshiwiejsjdjdjjdj121-sketch/binfitlab/actions/runs/35901275525)
 
-The checked-in `.gitmodules`, `CMakeLists.txt` and `scripts/wasm-base-docker-run.sh`
-are unmodified files at that commit. `Dockerfile.base` is an upstream historical
-WASM build recipe at openscad/openscad-wasm commit
-`ce3dd0ecbae17dc5a4727db4fcd8bf1020837187`; its correspondence to the official
-prebuilt dependencies has NOT been established. It is a research reference,
-not a claimed bit-for-bit reproducible build recipe.
+The release contains all captured source trees, submodules, dependency sources and patches; an individual-file source manifest; the Emscripten system-library sources; Docker image and package records; the build log; and rebuilding instructions. See BUILDING.md. Source archive SHA-256: `d11159a0229963db1ecb263f379f0d660d6b24d217e7784e648ec3f7581a5c9d`.
 
-Before public binary distribution, archive complete corresponding source,
-submodules, dependency sources, relevant patches and the actual build recipe
-for the prebuilt binary. Alternatively build a fresh pinned engine from a fully
-captured source tree, update `vendor/manifest.json`, and rerun geometry, native,
-browser and slicer comparisons. Do not mark the `correspondingSource` release
-gate passed merely because the application code is on GitHub or this file
-links to upstream source. This local preview has not been published.
+`vendor/manifest.json` pins the downloadable binary ZIP and every browser engine asset. `public/licenses/OPENSCAD-THIRD-PARTY-LICENSES.md` retains notices copied from the actual captured sources. Browser assets are served under a directory derived from their hashes to prevent mixing revisions through stale caches.
+
+`legacy-prebuilt/` contains historical research for the superseded 2025 official preview binary. Those files are not the recipe for the engine now distributed. The old binary is no longer used.
+
+All software checks were repeated for the new build: eight fixtures, three boundary models, native comparison, Chromium/WebKit and both slicers. Physical print/fit testing remains pending. No bit-for-bit container reproducibility or printer certification is claimed.

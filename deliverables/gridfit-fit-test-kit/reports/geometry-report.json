@@ -1,7 +1,7 @@
 {
-  "date": "2026-09-23T17:03:23.111Z",
+  "date": "2026-09-23T18:48:05.123Z",
   "modelCommit": "910e22d8607fd7f5f51ad5e5cbc5287a76810bfd",
-  "engine": "2025.03.25.wasm24456",
+  "engine": "2026.09.24.binfit1",
   "results": [
     {
       "key": "bin-1x1-2u-1x1-lip",
@@ -14,7 +14,7 @@
         "rows": 1,
         "lip": true
       },
-      "triangles": 5944,
+      "triangles": 5938,
       "size": [
         41.5,
         41.5,
@@ -30,25 +30,25 @@
         20.75,
         17.547929763793945
       ],
-      "volume": 13691.457679860889,
+      "volume": 13691.408811469528,
       "boundaryEdges": 0,
       "nonManifoldEdges": 0,
       "degenerateTriangles": 0,
       "orientationErrors": 0,
       "valid": true,
-      "elapsedMs": 425,
+      "elapsedMs": 456,
       "logs": [
         "Could not initialize localization (application path is '/').",
         "Geometries in cache: 56",
-        "Geometry cache size in bytes: 752024",
+        "Geometry cache size in bytes: 752384",
         "CGAL Polyhedrons in cache: 38",
-        "CGAL cache size in bytes: 0",
-        "Total rendering time: 0:00:00.219",
+        "CGAL cache size in bytes: 19414500",
+        "Total rendering time: 0:00:00.224",
         "   Top level object is a 3D object (manifold):",
         "   Status:     NoError",
         "   Genus:      0",
-        "   Vertices:     5140",
-        "   Facets:      10276"
+        "   Vertices:     5170",
+        "   Facets:      10336"
       ]
     },
     {
@@ -78,25 +78,25 @@
         62.75,
         24.547929763793945
       ],
-      "volume": 76322.24270921966,
+      "volume": 76322.3575441037,
       "boundaryEdges": 0,
       "nonManifoldEdges": 0,
       "degenerateTriangles": 0,
       "orientationErrors": 0,
       "valid": true,
-      "elapsedMs": 423,
+      "elapsedMs": 481,
       "logs": [
         "Could not initialize localization (application path is '/').",
         "Geometries in cache: 58",
-        "Geometry cache size in bytes: 766256",
+        "Geometry cache size in bytes: 766632",
         "CGAL Polyhedrons in cache: 44",
-        "CGAL cache size in bytes: 0",
-        "Total rendering time: 0:00:00.219",
+        "CGAL cache size in bytes: 21566250",
+        "Total rendering time: 0:00:00.243",
         "   Top level object is a 3D object (manifold):",
         "   Status:     NoError",
         "   Genus:      0",
-        "   Vertices:     7080",
-        "   Facets:      14156"
+        "   Vertices:     7180",
+        "   Facets:      14356"
       ]
     },
     {
@@ -126,25 +126,25 @@
         20.75,
         24.547929763793945
       ],
-      "volume": 28730.048650440378,
+      "volume": 28730.0593192298,
       "boundaryEdges": 0,
       "nonManifoldEdges": 0,
       "degenerateTriangles": 0,
       "orientationErrors": 0,
       "valid": true,
-      "elapsedMs": 429,
+      "elapsedMs": 470,
       "logs": [
         "Could not initialize localization (application path is '/').",
         "Geometries in cache: 58",
-        "Geometry cache size in bytes: 766256",
+        "Geometry cache size in bytes: 766632",
         "CGAL Polyhedrons in cache: 42",
-        "CGAL cache size in bytes: 0",
-        "Total rendering time: 0:00:00.235",
+        "CGAL cache size in bytes: 25460250",
+        "Total rendering time: 0:00:00.252",
         "   Top level object is a 3D object (manifold):",
         "   Status:     NoError",
         "   Genus:      0",
-        "   Vertices:     8682",
-        "   Facets:      17360"
+        "   Vertices:     8742",
+        "   Facets:      17480"
       ]
     },
     {
@@ -174,25 +174,25 @@
         20.75,
         56
       ],
-      "volume": 20519.023571351237,
+      "volume": 20519.015004304034,
       "boundaryEdges": 0,
       "nonManifoldEdges": 0,
       "degenerateTriangles": 0,
       "orientationErrors": 0,
       "valid": true,
-      "elapsedMs": 280,
+      "elapsedMs": 321,
       "logs": [
         "Could not initialize localization (application path is '/').",
         "Geometries in cache: 40",
-        "Geometry cache size in bytes: 535032",
+        "Geometry cache size in bytes: 535296",
         "CGAL Polyhedrons in cache: 33",
-        "CGAL cache size in bytes: 0",
-        "Total rendering time: 0:00:00.159",
+        "CGAL cache size in bytes: 17589000",
+        "Total rendering time: 0:00:00.183",
         "   Top level object is a 3D object (manifold):",
         "   Status:     NoError",
         "   Genus:      0",
-        "   Vertices:     4080",
-        "   Facets:       8156"
+        "   Vertices:     4110",
+        "   Facets:       8216"
       ]
     },
     {
@@ -206,7 +206,7 @@
         "rows": 2,
         "lip": true
       },
-      "triangles": 16876,
+      "triangles": 16880,
       "size": [
         83.5,
         83.5,
@@ -222,25 +222,25 @@
         41.75,
         24.547929763793945
       ],
-      "volume": 54261.92406075014,
+      "volume": 54261.90418325578,
       "boundaryEdges": 0,
       "nonManifoldEdges": 0,
       "degenerateTriangles": 0,
       "orientationErrors": 0,
       "valid": true,
-      "elapsedMs": 572,
+      "elapsedMs": 614,
       "logs": [
         "Could not initialize localization (application path is '/').",
         "Geometries in cache: 56",
-        "Geometry cache size in bytes: 752024",
+        "Geometry cache size in bytes: 752384",
         "CGAL Polyhedrons in cache: 46",
-        "CGAL cache size in bytes: 0",
-        "Total rendering time: 0:00:00.294",
+        "CGAL cache size in bytes: 35761250",
+        "Total rendering time: 0:00:00.314",
         "   Top level object is a 3D object (manifold):",
         "   Status:     NoError",
         "   Genus:      0",
-        "   Vertices:    15756",
-        "   Facets:      31508"
+        "   Vertices:    15874",
+        "   Facets:      31744"
       ]
     },
     {
@@ -272,16 +272,16 @@
       "degenerateTriangles": 0,
       "orientationErrors": 0,
       "valid": true,
-      "elapsedMs": 141,
+      "elapsedMs": 170,
       "logs": [
         "Could not initialize localization (application path is '/').",
         "ECHO: \"Number of Grids per axes (X, Y)]: [1, 1]\"",
         "ECHO: \"Final size (in mm): [42, 42, 5]\"",
         "Geometries in cache: 28",
-        "Geometry cache size in bytes: 146016",
+        "Geometry cache size in bytes: 146208",
         "CGAL Polyhedrons in cache: 9",
-        "CGAL cache size in bytes: 0",
-        "Total rendering time: 0:00:00.029",
+        "CGAL cache size in bytes: 1093500",
+        "Total rendering time: 0:00:00.037",
         "   Top level object is a 3D object (manifold):",
         "   Status:     NoError",
         "   Genus:      1",
@@ -318,16 +318,16 @@
       "degenerateTriangles": 0,
       "orientationErrors": 0,
       "valid": true,
-      "elapsedMs": 118,
+      "elapsedMs": 144,
       "logs": [
         "Could not initialize localization (application path is '/').",
         "ECHO: \"Number of Grids per axes (X, Y)]: [2, 1]\"",
         "ECHO: \"Final size (in mm): [84, 42, 5]\"",
         "Geometries in cache: 28",
-        "Geometry cache size in bytes: 146016",
+        "Geometry cache size in bytes: 146208",
         "CGAL Polyhedrons in cache: 11",
-        "CGAL cache size in bytes: 0",
-        "Total rendering time: 0:00:00.022",
+        "CGAL cache size in bytes: 1833000",
+        "Total rendering time: 0:00:00.028",
         "   Top level object is a 3D object (manifold):",
         "   Status:     NoError",
         "   Genus:      2",
@@ -358,22 +358,22 @@
         105,
         5
       ],
-      "volume": 36281.26834328858,
+      "volume": 36281.26834328857,
       "boundaryEdges": 0,
       "nonManifoldEdges": 0,
       "degenerateTriangles": 0,
       "orientationErrors": 0,
       "valid": true,
-      "elapsedMs": 453,
+      "elapsedMs": 510,
       "logs": [
         "Could not initialize localization (application path is '/').",
         "ECHO: \"Number of Grids per axes (X, Y)]: [5, 5]\"",
         "ECHO: \"Final size (in mm): [210, 210, 5]\"",
         "Geometries in cache: 28",
-        "Geometry cache size in bytes: 146016",
+        "Geometry cache size in bytes: 146208",
         "CGAL Polyhedrons in cache: 34",
-        "CGAL cache size in bytes: 0",
-        "Total rendering time: 0:00:00.148",
+        "CGAL cache size in bytes: 15932000",
+        "Total rendering time: 0:00:00.172",
         "   Top level object is a 3D object (manifold):",
         "   Status:     NoError",
         "   Genus:      25",

@@ -1,6 +1,6 @@
 {
   "nativeVersion": "2026.09.22",
-  "browserEngine": "2025.03.25.wasm24456",
+  "browserEngine": "2026.09.24.binfit1",
   "modelCommit": "910e22d8607fd7f5f51ad5e5cbc5287a76810bfd",
   "simplificationToleranceMm": 0.005,
   "results": [
@@ -11,7 +11,7 @@
         0,
         0
       ],
-      "volumeRelativeDifference": 0.00027122749673412077,
+      "volumeRelativeDifference": 0.0002676591906830664,
       "passed": true
     },
     {
@@ -21,7 +21,7 @@
         0,
         0
       ],
-      "volumeRelativeDifference": 0.0003658042364296333,
+      "volumeRelativeDifference": 0.00036730828950979,
       "passed": true
     },
     {
@@ -31,7 +31,7 @@
         0,
         0
       ],
-      "volumeRelativeDifference": 0.0003798474910793977,
+      "volumeRelativeDifference": 0.0003802186959137074,
       "passed": true
     },
     {
@@ -41,7 +41,7 @@
         0,
         0
       ],
-      "volumeRelativeDifference": 0.0004609432298914547,
+      "volumeRelativeDifference": 0.0004605259048746672,
       "passed": true
     },
     {
@@ -51,7 +51,7 @@
         0,
         0
       ],
-      "volumeRelativeDifference": 0.00042155608185309983,
+      "volumeRelativeDifference": 0.0004211899112370077,
       "passed": true
     },
     {
@@ -81,7 +81,7 @@
         0,
         0
       ],
-      "volumeRelativeDifference": 0.001127282299507142,
+      "volumeRelativeDifference": 0.0011272822995067413,
       "passed": true
     }
   ]

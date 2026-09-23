@@ -1,10 +1,25 @@
-import { mkdirSync, writeFileSync, copyFileSync } from "node:fs";
+import {
+  mkdirSync,
+  writeFileSync,
+  copyFileSync,
+  rmSync,
+  readFileSync,
+} from "node:fs";
+import { basename } from "node:path";
 import { routes, site } from "../src/site";
+import { ENGINE_ASSET_ROOT } from "../src/core/engine-assets";
 if (site.publicRelease) await import("./release-gate");
 mkdirSync("public", { recursive: true });
 for (const name of ["manifold.js", "manifold.wasm"])
   copyFileSync(`node_modules/manifold-3d/${name}`, `public/engine/${name}`);
 await import("./verify-vendor");
+// Old cached pages must not silently combine assets from two engine builds.
+rmSync("public/engine/revisions", { recursive: true, force: true });
+const engineDirectory = `public${ENGINE_ASSET_ROOT}`;
+mkdirSync(engineDirectory, { recursive: true });
+const manifest = JSON.parse(readFileSync("vendor/manifest.json", "utf8"));
+for (const file of manifest.files)
+  copyFileSync(file.path, engineDirectory + basename(file.path));
 writeFileSync(
   "public/robots.txt",
   site.publicRelease

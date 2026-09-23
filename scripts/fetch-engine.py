@@ -1,10 +1,10 @@
-"""Fetch the unchanged official development engine; verify every byte before use."""
+"""Fetch the pinned source-captured engine; verify every byte before use."""
 import hashlib, io, json, pathlib, urllib.request, zipfile
 root = pathlib.Path(__file__).resolve().parents[1]
 manifest = json.loads((root / 'vendor/manifest.json').read_text())
 blob = urllib.request.urlopen(manifest['archiveUrl'], timeout=60).read()
 if hashlib.sha256(blob).hexdigest() != manifest['archiveSha256']:
-    raise SystemExit('Official engine archive checksum mismatch; nothing was installed.')
+    raise SystemExit('Engine archive checksum mismatch; nothing was installed.')
 archive = zipfile.ZipFile(io.BytesIO(blob))
 verified = []
 for filename in ['openscad.js', 'openscad.wasm']:
@@ -19,4 +19,4 @@ for filename in ['openscad.js', 'openscad.wasm']:
 for path, data in verified:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(data)
-print('Pinned official development engine downloaded and verified.')
+print('Pinned source-captured engine downloaded and verified.')

@@ -1,4 +1,4 @@
-# GridFit Lab external fit test / 外部实物配合测试
+# BinFit Lab external fit test / 外部实物配合测试
 
 This is a test kit, not a statement of certified compatibility. 这是待验证的样件包。
 

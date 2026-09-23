@@ -11,7 +11,8 @@
       "expectedHeightMm": 17.547929763793945,
       "hasExtrusions": true,
       "warnings": [],
-      "passed": true
+      "passed": true,
+      "stlSha256": "1757d702a346f9558f4be5ff76d2063d169d65f7a22adf7b787922a7db1191f6"
     },
     {
       "engine": "cura",
@@ -21,9 +22,10 @@
       "expectedHeightMm": 17.547929763793945,
       "hasExtrusions": true,
       "warnings": [
-        "[2026-09-24 01:04:13.022] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+        "[2026-09-24 02:49:33.167] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
       ],
-      "passed": true
+      "passed": true,
+      "stlSha256": "1757d702a346f9558f4be5ff76d2063d169d65f7a22adf7b787922a7db1191f6"
     },
     {
       "engine": "prusa",
@@ -33,7 +35,8 @@
       "expectedHeightMm": 24.547929763793945,
       "hasExtrusions": true,
       "warnings": [],
-      "passed": true
+      "passed": true,
+      "stlSha256": "89fb488443c943d330a2ebabf60f9fa0125cb4bf1f8b2f795718ae6154b3fbe0"
     },
     {
       "engine": "cura",
@@ -43,9 +46,10 @@
       "expectedHeightMm": 24.547929763793945,
       "hasExtrusions": true,
       "warnings": [
-        "[2026-09-24 01:04:13.622] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+        "[2026-09-24 02:49:33.868] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
       ],
-      "passed": true
+      "passed": true,
+      "stlSha256": "89fb488443c943d330a2ebabf60f9fa0125cb4bf1f8b2f795718ae6154b3fbe0"
     },
     {
       "engine": "prusa",
@@ -55,7 +59,8 @@
       "expectedHeightMm": 24.547929763793945,
       "hasExtrusions": true,
       "warnings": [],
-      "passed": true
+      "passed": true,
+      "stlSha256": "31ce83b6076b8b1d209d8a3e99e94ead453321364c9a2f3f4f42de18cdea45fa"
     },
     {
       "engine": "cura",
@@ -65,9 +70,10 @@
       "expectedHeightMm": 24.547929763793945,
       "hasExtrusions": true,
       "warnings": [
-        "[2026-09-24 01:04:14.245] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+        "[2026-09-24 02:49:34.565] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
       ],
-      "passed": true
+      "passed": true,
+      "stlSha256": "31ce83b6076b8b1d209d8a3e99e94ead453321364c9a2f3f4f42de18cdea45fa"
     },
     {
       "engine": "prusa",
@@ -77,7 +83,8 @@
       "expectedHeightMm": 56,
       "hasExtrusions": true,
       "warnings": [],
-      "passed": true
+      "passed": true,
+      "stlSha256": "14e845b6f1e1e95aaa9d1f72403138e632518260240d4d92a6e58e1c712f00d3"
     },
     {
       "engine": "cura",
@@ -87,9 +94,10 @@
       "expectedHeightMm": 56,
       "hasExtrusions": true,
       "warnings": [
-        "[2026-09-24 01:04:14.955] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+        "[2026-09-24 02:49:35.324] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
       ],
-      "passed": true
+      "passed": true,
+      "stlSha256": "14e845b6f1e1e95aaa9d1f72403138e632518260240d4d92a6e58e1c712f00d3"
     },
     {
       "engine": "prusa",
@@ -99,7 +107,8 @@
       "expectedHeightMm": 24.547929763793945,
       "hasExtrusions": true,
       "warnings": [],
-      "passed": true
+      "passed": true,
+      "stlSha256": "3ee22eb37a3fde4e7c648cb857a4acc4d826907aa0bfd4ec1e0140af6151dfbb"
     },
     {
       "engine": "cura",
@@ -109,9 +118,10 @@
       "expectedHeightMm": 24.547929763793945,
       "hasExtrusions": true,
       "warnings": [
-        "[2026-09-24 01:04:15.791] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+        "[2026-09-24 02:49:36.214] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
       ],
-      "passed": true
+      "passed": true,
+      "stlSha256": "3ee22eb37a3fde4e7c648cb857a4acc4d826907aa0bfd4ec1e0140af6151dfbb"
     },
     {
       "engine": "prusa",
@@ -121,7 +131,8 @@
       "expectedHeightMm": 5,
       "hasExtrusions": true,
       "warnings": [],
-      "passed": true
+      "passed": true,
+      "stlSha256": "4342e639debf782e2195c5c4497ffeb3333a18e3c3a5228da51328c95875bc2c"
     },
     {
       "engine": "cura",
@@ -131,9 +142,10 @@
       "expectedHeightMm": 5,
       "hasExtrusions": true,
       "warnings": [
-        "[2026-09-24 01:04:16.118] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+        "[2026-09-24 02:49:36.632] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
       ],
-      "passed": true
+      "passed": true,
+      "stlSha256": "4342e639debf782e2195c5c4497ffeb3333a18e3c3a5228da51328c95875bc2c"
     },
     {
       "engine": "prusa",
@@ -143,7 +155,8 @@
       "expectedHeightMm": 5,
       "hasExtrusions": true,
       "warnings": [],
-      "passed": true
+      "passed": true,
+      "stlSha256": "82ba87e6ac41e91d5b3164ec1d08708cadb5aee4deb11050b0da98fb39d6ff9a"
     },
     {
       "engine": "cura",
@@ -153,9 +166,10 @@
       "expectedHeightMm": 5,
       "hasExtrusions": true,
       "warnings": [
-        "[2026-09-24 01:04:16.325] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+        "[2026-09-24 02:49:36.912] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
       ],
-      "passed": true
+      "passed": true,
+      "stlSha256": "82ba87e6ac41e91d5b3164ec1d08708cadb5aee4deb11050b0da98fb39d6ff9a"
     },
     {
       "engine": "prusa",
@@ -165,7 +179,8 @@
       "expectedHeightMm": 5,
       "hasExtrusions": true,
       "warnings": [],
-      "passed": true
+      "passed": true,
+      "stlSha256": "6839480ee4d923626ddb31d072b754d727999d0e99ff419cf1231647da960abe"
     },
     {
       "engine": "cura",
@@ -175,9 +190,13 @@
       "expectedHeightMm": 5,
       "hasExtrusions": true,
       "warnings": [
-        "[2026-09-24 01:04:17.331] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
+        "[2026-09-24 02:49:38.384] [warning] JSON setting 'reset_flow_duration' has no [default_]value!"
       ],
-      "passed": true
+      "passed": true,
+      "stlSha256": "6839480ee4d923626ddb31d072b754d727999d0e99ff419cf1231647da960abe"
     }
-  ]
+  ],
+  "date": "2026-09-23T18:51:52.141817+00:00",
+  "browserEngine": "2026.09.24.binfit1",
+  "modelCommit": "910e22d8607fd7f5f51ad5e5cbc5287a76810bfd"
 }

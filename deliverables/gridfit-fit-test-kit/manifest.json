@@ -8,21 +8,21 @@
       "file": "models/bin-1x1-2u-1x1-lip.stl",
       "quantity": 2,
       "purpose": "Our small bin; print two for stacking",
-      "sha256": "34aa6165622947b225d9c9663bed9e9de4798c1d43501dd0ccfb71f3cf8b7b1a"
+      "sha256": "1757d702a346f9558f4be5ff76d2063d169d65f7a22adf7b787922a7db1191f6"
     },
     {
       "label": "B",
       "file": "models/bin-2x1-3u-2x1-lip.stl",
       "quantity": 1,
       "purpose": "Our divided bin; spans a seam between plates",
-      "sha256": "a2f779984f62161588510e0c470a9812861f0e6de801680359c765f0b573f82a"
+      "sha256": "31ce83b6076b8b1d209d8a3e99e94ead453321364c9a2f3f4f42de18cdea45fa"
     },
     {
       "label": "C",
       "file": "models/plate-1x1.stl",
       "quantity": 2,
       "purpose": "Our plates; place side by side",
-      "sha256": "31bde727aa057bed2c11f860392e04a8877831b41b55282d6fb1ba35760828f3"
+      "sha256": "4342e639debf782e2195c5c4497ffeb3333a18e3c3a5228da51328c95875bc2c"
     },
     {
       "label": "R1",

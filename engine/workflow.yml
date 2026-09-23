@@ -19,48 +19,18 @@ jobs:
             [worker.oci]
               max-parallelism = 2
       - name: Fetch exact build inputs
-        run: |
-          git clone https://github.com/openscad/openscad-wasm.git engine-source
-          git -C engine-source checkout "$ENGINE_SOURCE_REF"
-          cp engine/Dockerfile.web engine-source/Dockerfile
-          python3 - <<'PY'
-          from pathlib import Path
-          p=Path('engine-source/Makefile')
-          s=p.read_text().replace('https://gmplib.org/download/gmp/gmp-6.3.0.tar.xz','https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz')
-          p.write_text(s)
-          PY
-          make -C engine-source -j4 libs
-          python3 -m venv /tmp/binfit-meson
-          /tmp/binfit-meson/bin/pip install meson
-          cd engine-source/libs/glib
-          /tmp/binfit-meson/bin/meson subprojects download pcre2 gvdb
+        run: bash engine/build.sh fetch
       - name: Capture source and provenance
-        run: |
-          mkdir -p output
-          python3 engine/capture-sources.py engine-source output
-          tar --exclude-vcs --exclude='cmake.tar.gz' -czf output/openscad-corresponding-source.tar.gz engine-source
-          sha256sum output/openscad-corresponding-source.tar.gz > output/source-sha256.txt
+        run: bash engine/build.sh capture
       - uses: actions/upload-artifact@v4
         with:
           name: corresponding-source
           path: output/
           compression-level: 0
       - name: Build dependency environment
-        run: |
-          docker buildx build --load --progress plain engine-source/libs -f engine-source/Dockerfile.base -t binfit-wasm-base \
-            --build-arg EMSCRIPTEN_SDK_TAG=emscripten/emsdk:6.0.5 \
-            --build-arg EMSCRIPTEN_FLAGS='-fexceptions -O3'
-          docker image inspect binfit-wasm-base > output/base-image.json
-          docker run --rm binfit-wasm-base sh -c 'emcc --version; dpkg-query -W' > output/build-environment.txt
+        run: bash engine/build.sh base
       - name: Build browser engine
-        run: |
-          docker buildx build --load --progress plain engine-source/libs/openscad -f engine-source/Dockerfile -t binfit-openscad \
-            --build-arg DOCKER_TAG_BASE=binfit-wasm-base --build-arg CMAKE_BUILD_PARALLEL_LEVEL=2
-          docker create --name binfit-output binfit-openscad
-          docker cp binfit-output:/home/build/openscad.js output/openscad.js
-          docker cp binfit-output:/home/build/openscad.wasm output/openscad.wasm
-          docker rm binfit-output
-          sha256sum output/openscad.js output/openscad.wasm > output/engine-sha256.txt
+        run: bash engine/build.sh engine
       - uses: actions/upload-artifact@v4
         if: always()
         with:

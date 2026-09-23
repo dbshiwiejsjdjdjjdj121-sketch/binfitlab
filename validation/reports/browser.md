@@ -1,6 +1,6 @@
 # Browser verification — 2026-09-24 (Asia/Shanghai)
 
-Executed against the locally served static production build with Playwright 1.58.2.
+Executed against the locally served static build with Playwright 1.58.2 and OpenSCAD 2026.09.24.binfit1. All 13 tests passed in one run, including nine end-to-end scenarios and four accessibility scans.
 
 Passed scenarios:
 
@@ -16,6 +16,8 @@ Passed scenarios:
 
 Accessibility: four axe-core WCAG 2 A/AA and WCAG 2.1 AA scans pass on home, bin generator, planner and privacy after adding the document language and improving text contrast. Automated scans are not a full accessibility certification.
 
-Reports come from successive verification runs while fixing discovered issues. Final passing results cover all nine end-to-end scenarios and the four accessibility routes. `npm run test:browser` reruns the complete suite. CI skips the local WebKit smoke check unless its binary is installed.
+The new engine passed the complete suite in one final run. `npm run test:browser` reruns the complete suite. CI skips the local WebKit smoke check unless its binary is installed.
 
 Limits: these checks are local synthetic browser tests, not field telemetry, an exhaustive browser matrix, a memory-leak proof, or physical printer compatibility evidence.
+
+Engine cache verification: all six engine asset requests use the same hash-derived revision directory. Generated STL dimensions remained unchanged. The public-beta build was then checked with PUBLIC_RELEASE_TEST=true: all nine routes had indexable metadata, canonical binfitlab.com URLs and a complete sitemap; the robots file allowed crawling. This separate release-policy test passed.
