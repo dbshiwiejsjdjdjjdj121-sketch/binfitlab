@@ -36,6 +36,8 @@ import {
 import { BedFields, NumberField } from "./Fields";
 import { BinFields } from "./Generator";
 import { ExportChecks, QuickGuide, ToolFeedback } from "./ToolSupport";
+import UsagePreference from "./UsagePreference";
+import { recordDownload } from "../core/usage";
 const STORAGE = "gridfit-project-v1";
 function initialProject() {
   const p = newProject();
@@ -237,6 +239,7 @@ export default function Planner() {
       );
       if (!controller.signal.aborted) {
         download(bytes, "gridfit-drawer-print-kit.zip", "application/zip");
+        recordDownload("drawer");
         setProgress(
           "Print kit ready: STL models, quantities, layout, project and guide.",
         );
@@ -786,6 +789,7 @@ export default function Planner() {
             Drag a bin to move it. Use the side panel for exact positions. Your
             print kit includes unique models, quantities and an assembly map.
           </p>
+          <UsagePreference />
           <ToolFeedback
             tool="drawer"
             description={`Drawer: ${project.drawer.width} × ${project.drawer.depth} mm; clear height: ${project.drawer.height ?? "not supplied"}; bins: ${project.bins.length}`}

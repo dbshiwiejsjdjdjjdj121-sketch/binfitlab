@@ -2394,3 +2394,32 @@ input::-webkit-outer-spin-button {
     flex: 1 1 170px;
   }
 }
+
+.usage-preference {
+  margin: 14px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #546047;
+}
+.usage-preference label {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.usage-preference input {
+  accent-color: #526f35;
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+.usage-preference small {
+  display: block;
+  margin: 4px 0 0 24px;
+  font-size: 12px;
+}
+.usage-preference a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

@@ -16,6 +16,7 @@ import {
 import { routes, site, type Route } from "../site";
 import { MODEL_COMMIT } from "../core/project";
 import { BrandArt } from "./BrandArt";
+import UsagePreference from "./UsagePreference";
 const Generator = lazy(() => import("./Generator"));
 const Planner = lazy(() => import("./Planner"));
 export function Logo() {
@@ -662,14 +663,33 @@ function Content({ path }: { path: string }) {
           app. You choose whether to send the email and attach the file or
           photos to the maintainer.
         </p>
-        <h2>Connections and analytics</h2>
+        <h2 id="usage-statistics">Optional usage statistics</h2>
         <p>
-          The current application does not include advertising, third-party
-          analytics, tracking cookies or remote fonts. The website is hosted
-          with OpenAI Sites on Cloudflare. These hosting services may receive
-          normal connection information such as IP address, user agent and
-          requested URL when serving website assets. Contact the site maintainer
-          at <a href={`mailto:${site.contact}`}>{site.contact}</a>.
+          Statistics are off by default. If you turn them on, the tools send the
+          tool type, generation outcome, a broad error category, elapsed-time
+          range and download-start events to this website. We store daily
+          totals, not individual activity histories. We do not include models,
+          dimensions, project names, raw error messages or visitor identifiers
+          in these counters. A download event does not tell us whether a file
+          was saved or printed.
+        </p>
+        <UsagePreference />
+        <p>
+          Your choice is stored only in this browser. You can turn it off at any
+          time; Do Not Track and Global Privacy Control also disable statistics.
+          There are no analytics cookies or third-party analytics scripts. We
+          keep a rolling 90-day window of daily totals, removing older rows when
+          new statistics arrive. Results cover participating browsers only.
+        </p>
+        <h2>Hosting connections</h2>
+        <p>
+          The current application does not include advertising, tracking cookies
+          or remote fonts. The website is hosted with OpenAI Sites on
+          Cloudflare. These hosting services may receive normal connection
+          information such as IP address, user agent and requested URL when
+          serving website assets or receiving statistics. Optional counters do
+          not store that connection information. Contact the site maintainer at{" "}
+          <a href={`mailto:${site.contact}`}>{site.contact}</a>.
         </p>
         <h2>External links</h2>
         <p>

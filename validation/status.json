@@ -2,7 +2,7 @@
   "browser": {
     "status": "passed",
     "evidence": "validation/reports/browser.md",
-    "note": "All 15 tests passed with OpenSCAD 2026.09.24.binfit1: existing browser, mobile, WebKit and accessibility checks plus collapsed help, opt-in feedback diagnostics and stale export-evidence scenarios. See validation/reports/tool-support.md."
+    "note": "All 17 browser tests passed on the public-beta build, including opt-in counters, opt-out, GPC, existing export evidence, mobile, WebKit and accessibility checks."
   },
   "geometry": {
     "status": "passed",
@@ -37,5 +37,10 @@
     "evidence": "validation/reports/digital-assembly.json",
     "note": "Four nominal CAD collision sweeps. Not a physical test."
   },
-  "engine": "2026.09.24.binfit1"
+  "engine": "2026.09.24.binfit1",
+  "usageCounters": {
+    "status": "passed",
+    "evidence": "validation/reports/usage-statistics.md",
+    "note": "15 core/Worker tests and 17 browser tests pass. Counter database migrations are generated and reviewed. Physical printing is not observed."
+  }
 }

@@ -23,3 +23,5 @@ Limits: these checks are local synthetic browser tests, not field telemetry, an 
 Engine cache verification: all six engine asset requests use the same hash-derived revision directory. Generated STL dimensions remained unchanged. The public-beta build was then checked with PUBLIC_RELEASE_TEST=true: all nine routes had indexable metadata, canonical binfitlab.com URLs and a complete sitemap; the robots file allowed crawling. This separate release-policy test passed.
 
 Follow-up: the compact tool-support update passed the complete expanded 15-test suite on the public-beta build. See `tool-support.md` for the added scenarios.
+
+Optional usage counters: the complete 17-test suite passed on the public-beta build, including the new default-off, opt-in/out and GPC scenarios. See `usage-statistics.md`.

@@ -25,6 +25,8 @@ import { useModel } from "./useModel";
 import { BedFields, Stepper } from "./Fields";
 import Viewer from "./Viewer";
 import { ExportChecks, QuickGuide, ToolFeedback } from "./ToolSupport";
+import UsagePreference from "./UsagePreference";
+import { recordDownload } from "../core/usage";
 
 export function BinFields({
   bin,
@@ -194,6 +196,7 @@ export default function Generator({ kind }: { kind: "bin" | "plate" }) {
       );
       if (!abort.signal.aborted) {
         download(zip, `gridfit-baseplate-${nx}x${ny}.zip`, "application/zip");
+        recordDownload("plate");
         setBundleStatus("Your print kit is ready.");
       }
     } catch (e) {
@@ -359,6 +362,7 @@ export default function Generator({ kind }: { kind: "bin" | "plate" }) {
             onClick={() => {
               if (result && model) {
                 download(result.bytes, `gridfit-${modelKey(model)}.stl`);
+                recordDownload(kind);
                 setDownloaded(true);
               }
             }}
@@ -491,6 +495,7 @@ export default function Generator({ kind }: { kind: "bin" | "plate" }) {
           ) : null}
         </div>
         <div className="tool-aftercare">
+          <UsagePreference />
           <p>
             Open the STL in millimeters, at 100% scale.{" "}
             <a href="/guides/print-and-fit-test/">Slicing & fit guide</a>

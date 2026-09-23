@@ -81,7 +81,11 @@ export async function makePrintBundle(
   let completed = 0;
   for (const [key, item] of entries) {
     onProgress(`Generating ${key}`, completed, entries.size);
-    const result = await generateModel(item.model, signal);
+    const result = await generateModel(
+      item.model,
+      signal,
+      project ? "drawer" : "plate",
+    );
     if (!modelFitsBed(result.report.size, bed))
       throw new Error(
         `${key} does not fit your print bed, even when rotated. Use a smaller bin or a larger bed.`,

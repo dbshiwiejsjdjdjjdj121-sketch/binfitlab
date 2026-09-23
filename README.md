@@ -19,7 +19,7 @@ npm run build
 npm run preview
 ```
 
-`dist/client` is the static website. No database, accounts, model-upload API, or cloud renderer is required. Nine public-content routes are prerendered. All preview pages are `noindex`; the preview robots file disallows crawling and its sitemap is empty.
+`dist/client` contains the prerendered website. `dist/server/index.js` serves assets plus the optional usage counter endpoint. Sites D1 stores daily aggregates only; no accounts, model-upload API, or cloud renderer is used. Nine public-content routes are prerendered. All preview pages are `noindex`; the preview robots file disallows crawling and its sitemap is empty.
 
 ## Features
 
@@ -27,6 +27,7 @@ npm run preview
 - Thin baseplates; automatic complete-cell tiling for a printer bed and edge margin; individual STL and assembly ZIP.
 - Drawer measurements and margins; add, move, rotate, duplicate and delete bins; keyboard movement, undo/redo; bounds and overlap checks.
 - Local project autosave, validated JSON import/export, unique models with quantities, assembly SVG, manifest, CSV and printable HTML guide.
+- Optional usage statistics are off by default. Opted-in browsers send only tool type, generation outcome, broad error category, time range and download-start events. No model parameters or visitor IDs are collected; see `validation/reports/usage-statistics.md`.
 - Cancellable worker jobs. Editing invalidates old results; mesh/size failures block export. No automatic project uploads.
 - Collapsed three-step help, current-model export checks and drawer export summaries. Feedback is opt-in: save a local diagnostic JSON and open an email draft; the visitor chooses whether to attach and send it.
 
@@ -77,3 +78,7 @@ The default configuration remains a non-indexable local preview. A public beta r
 ## License
 
 Application code: GPL-3.0-only. Vendored upstream projects retain their licenses and notices; see `public/licenses/`. The original Gridfinity system is credited to Zack Freedman. This is an independent project.
+
+## Usage counters and local preview
+
+`npm run preview` serves the static build and counter API using Node 22 SQLite in `artifacts/usage-preview.sqlite`. Production uses the Sites `DB` binding, with schema-only generated migrations in `drizzle/`. `npm run db:generate` creates migrations after schema edits; never edit an applied migration. Statistics are visible only to the site owner through Sites database tools/settings. Public endpoints provide no read access. Downloads do not establish printing success.

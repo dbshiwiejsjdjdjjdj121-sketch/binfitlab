@@ -1,6 +1,11 @@
 import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import { resolve, extname, sep } from "node:path";
+import { mkdirSync } from "node:fs";
+import { createLocalUsageDB } from "./local-usage-db.mjs";
+import worker from "../worker/index.js";
+mkdirSync("artifacts", { recursive: true });
+const DB = createLocalUsageDB("artifacts/usage-preview.sqlite");
 const root = resolve("dist/client"),
   port = Number(process.env.PORT || 3000);
 const types = {
@@ -18,6 +23,30 @@ const types = {
 createServer(async (req, res) => {
   try {
     const url = new URL(req.url || "/", "http://localhost");
+    if (url.pathname.startsWith("/api/")) {
+      const chunks = [];
+      let size = 0;
+      for await (const chunk of req) {
+        size += chunk.length;
+        if (size > 512) {
+          res.writeHead(413);
+          res.end();
+          return;
+        }
+        chunks.push(chunk);
+      }
+      const request = new Request(`http://${req.headers.host}${req.url}`, {
+        method: req.method,
+        headers: req.headers,
+        ...(!["GET", "HEAD"].includes(req.method)
+          ? { body: Buffer.concat(chunks) }
+          : {}),
+      });
+      const result = await worker.fetch(request, { DB });
+      res.writeHead(result.status, Object.fromEntries(result.headers));
+      res.end(Buffer.from(await result.arrayBuffer()));
+      return;
+    }
     let path = resolve(root, "." + decodeURIComponent(url.pathname));
     if (!path.startsWith(root + sep) && path !== root) {
       res.writeHead(403);
