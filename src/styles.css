@@ -2258,3 +2258,139 @@ input::-webkit-outer-spin-button {
 .bin-caption strong {
   color: #455439;
 }
+
+/* Keep help and evidence available without expanding the working surface. */
+.tool-details {
+  min-width: 0;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.tool-details > summary {
+  cursor: pointer;
+  padding: 10px 0;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.tool-details > summary::marker {
+  color: #626e56;
+}
+.tool-details p,
+.tool-details li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #546047;
+}
+.tool-details a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tool-details .button {
+  text-decoration: none;
+}
+.tool-details ol {
+  padding-left: 20px;
+  margin: 0 0 12px;
+}
+.tool-details li + li {
+  margin-top: 8px;
+}
+.panel-heading .quick-guide {
+  margin-top: 4px;
+}
+.panel-heading .quick-guide summary {
+  padding-bottom: 0;
+}
+.panel-heading .quick-guide[open] summary {
+  padding-bottom: 10px;
+}
+.export-checks {
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.export-checks dl {
+  margin: 0;
+}
+.export-checks dl > div {
+  padding: 8px 0;
+  border-top: 1px solid #edf0e6;
+}
+.export-checks dt {
+  font-weight: 600;
+}
+.export-checks dd {
+  margin: 2px 0 0;
+  color: #546047;
+  overflow-wrap: anywhere;
+}
+.export-checks > p {
+  margin: 10px 0 14px;
+}
+.tool-aftercare {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.tool-aftercare > p {
+  font-size: 14px;
+  color: #546047;
+  line-height: 1.6;
+  margin: 14px 0 2px;
+}
+.tool-aftercare > p a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.feedback-content {
+  max-width: 560px;
+  padding: 4px 0 14px;
+}
+.feedback-content > label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.feedback-content select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid #a9b19b;
+  background: white;
+  color: var(--ink);
+  border-radius: 6px;
+  padding: 8px;
+  font: inherit;
+}
+.feedback-content p {
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+.feedback-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.feedback-actions .button {
+  font-size: 14px;
+  min-height: 42px;
+}
+.planner-support {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  align-items: start;
+  gap: 12px 28px;
+  padding: 4px 22px;
+  border-bottom: 1px solid var(--line);
+}
+.planner-support .export-checks {
+  margin: 0;
+  border: 0;
+}
+@media (max-width: 700px) {
+  .planner-support {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 4px 16px;
+  }
+  .feedback-actions .button {
+    flex: 1 1 170px;
+  }
+}

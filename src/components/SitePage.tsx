@@ -654,6 +654,14 @@ function Content({ path }: { path: string }) {
           project JSON files are read locally and checked against the supported
           format. There is no cloud account or synchronization.
         </p>
+        <p>
+          Feedback is optional. The diagnostic file contains your current tool
+          settings and available check results; the planner replaces your
+          project name with a generic label. Saving it does not upload it.
+          Opening an email draft passes a short settings summary to your mail
+          app. You choose whether to send the email and attach the file or
+          photos to the maintainer.
+        </p>
         <h2>Connections and analytics</h2>
         <p>
           The current application does not include advertising, third-party

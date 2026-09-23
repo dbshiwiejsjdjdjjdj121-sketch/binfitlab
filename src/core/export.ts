@@ -47,12 +47,21 @@ export type BundleProgress = (
   completed: number,
   total: number,
 ) => void;
+export type PrintKitChecks = {
+  modelCount: number;
+  partCount: number;
+  plateCount: number;
+  heightCheck: string;
+  maxBinHeight: number | null;
+  clearanceLowerBound: number | null;
+};
 export async function makePrintBundle(
   project: Project | null,
   tiles: Tile[],
   bed: Bed,
   onProgress: BundleProgress,
   signal: AbortSignal,
+  onChecked?: (checks: PrintKitChecks) => void,
 ) {
   if (project) {
     projectSchema.parse(project);
@@ -173,7 +182,22 @@ export async function makePrintBundle(
   files["print-guide.html"] = strToU8(
     `<!doctype html><html lang="en"><meta charset="utf-8"><title>BinFit Lab print kit</title><style>body{font:16px/1.6 system-ui;max-width:880px;margin:40px auto;padding:24px;color:#253025}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:8px;text-align:left}svg{max-height:520px;width:100%}@media print{body{margin:0}}</style><h1>${escape(project?.name || "Baseplate print kit")}</h1><p>All STL dimensions are millimeters. Import at 100% scale. Physical fit validation is pending.</p><p>${heightCheck}</p>${svg}<p>View from above. Front edge is at the bottom. Origin is the front-left corner of the grid; positions in manifest.json are millimeters from that origin. Rotate a bin 90° on the layout when its rotated flag is true. Duplicate STL shapes are included once; print the stated quantity.</p><table><tr><th>Model</th><th>Quantity</th><th>Actual size (mm)</th></tr>${[...entries].map(([k, e]) => `<tr><td>${k}</td><td>${e.quantity}</td><td>${reports[k].size.map((n) => n.toFixed(2)).join(" × ")}</td></tr>`).join("")}</table><h2>Before printing the full drawer</h2><ol><li>Slice one small bin and one plate in your printer's profile, flat side down, at 100% scale.</li><li>Review every layer for missing walls and unexpected islands. Check the slicer's support preview.</li><li>Print a fit sample. Test it with an independently sourced Gridfinity part, then test a bin across a plate seam.</li><li>Measure drawer clearance after assembly. Check stacking, finger access and drawer closure.</li></ol><p>Profile ${PROFILE}; Rebuilt ${MODEL_COMMIT}; OpenSCAD ${ENGINE_VERSION}. Mesh checks do not certify physical fit. Files contain geometry, not printer-specific G-code.</p></html>`,
   );
-  return zipSync(files, { level: 6 });
+  const zip = zipSync(files, { level: 6 });
+  onChecked?.({
+    modelCount: entries.size,
+    partCount: [...entries.values()].reduce(
+      (total, entry) => total + entry.quantity,
+      0,
+    ),
+    plateCount: tiles.length,
+    heightCheck,
+    maxBinHeight: maxHeight,
+    clearanceLowerBound:
+      project?.drawer.height != null && maxHeight != null
+        ? project.drawer.height - maxHeight - 5
+        : null,
+  });
+  return zip;
 }
 export function projectTiles(p: Project) {
   const g = drawerGrid(p.drawer);

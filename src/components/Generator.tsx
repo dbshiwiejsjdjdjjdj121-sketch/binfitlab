@@ -24,6 +24,7 @@ import { download, makePrintBundle } from "../core/export";
 import { useModel } from "./useModel";
 import { BedFields, Stepper } from "./Fields";
 import Viewer from "./Viewer";
+import { ExportChecks, QuickGuide, ToolFeedback } from "./ToolSupport";
 
 export function BinFields({
   bin,
@@ -206,11 +207,7 @@ export default function Generator({ kind }: { kind: "bin" | "plate" }) {
       <aside className="controls-panel">
         <div className="panel-heading">
           <h2>{kind === "bin" ? "Make it yours" : "Build your foundation"}</h2>
-          <p>
-            {kind === "bin"
-              ? "A little structure goes a long way."
-              : "One grid. Sized for your printer."}
-          </p>
+          <QuickGuide kind={kind} />
         </div>
         <fieldset disabled={exporting} className="control-fields">
           {kind === "bin" ? (
@@ -307,6 +304,55 @@ export default function Generator({ kind }: { kind: "bin" | "plate" }) {
           </p>
         )}
         <div className="export-actions">
+          <ExportChecks
+            summary={
+              validation || !fits
+                ? "Review settings before downloading"
+                : result
+                  ? "Model checked · view export checks"
+                  : generated.busy
+                    ? "Checking model…"
+                    : "Model not checked"
+            }
+            rows={[
+              {
+                label: "Current STL",
+                value:
+                  result && !validation
+                    ? "Closed mesh; measured dimensions checked"
+                    : validation ||
+                      generated.error ||
+                      "Waiting for a valid model",
+              },
+              {
+                label: "Actual size",
+                value: result
+                  ? `${result.report.size.map((n) => n.toFixed(2)).join(" × ")} mm`
+                  : "Not checked",
+              },
+              {
+                label: "Entered print bed",
+                value: `${bed.width} × ${bed.depth} mm; ${bed.margin} mm margin per side`,
+              },
+              {
+                label: "Bed fit",
+                value:
+                  validation || !result
+                    ? "Not checked"
+                    : fits
+                      ? "Fits the entered bed, with rotation if needed"
+                      : "Too large, even when rotated",
+              },
+              ...(kind === "plate"
+                ? [
+                    {
+                      label: "Complete baseplate",
+                      value: `${tiles.length} tiles; every STL is checked during ZIP export`,
+                    },
+                  ]
+                : []),
+            ]}
+          />
           <button
             className="button primary full"
             disabled={!result || !!validation || !fits || exporting}
@@ -444,13 +490,28 @@ export default function Generator({ kind }: { kind: "bin" | "plate" }) {
             </button>
           ) : null}
         </div>
-        <div className="fit-note">
-          <span className="note-mark">i</span>
+        <div className="tool-aftercare">
           <p>
-            <strong>Start small. Check the fit.</strong> Print one sample before
-            a full set. Physical fit testing is pending.{" "}
-            <a href="/guides/print-and-fit-test/">Read the fit guide ↗</a>
+            Open the STL in millimeters, at 100% scale.{" "}
+            <a href="/guides/print-and-fit-test/">Slicing & fit guide</a>
           </p>
+          <ToolFeedback
+            tool={kind}
+            description={
+              kind === "bin"
+                ? `Bin settings: ${JSON.stringify(bin)}`
+                : `Baseplate grid: ${nx} × ${ny}; selected tile: ${tile?.id || "none"}`
+            }
+            context={{
+              settings:
+                kind === "bin" ? bin : { nx, ny, selectedTile: tile || null },
+              bed,
+              validation: validation || generated.error || null,
+              mesh: result?.report || null,
+              bedFits: result && !validation ? fits : null,
+              exportError: exportError || null,
+            }}
+          />
         </div>
       </section>
     </div>

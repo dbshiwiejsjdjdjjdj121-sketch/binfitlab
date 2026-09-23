@@ -2,7 +2,7 @@
   "browser": {
     "status": "passed",
     "evidence": "validation/reports/browser.md",
-    "note": "All 13 tests passed in one run with OpenSCAD 2026.09.24.binfit1: nine end-to-end scenarios including WebKit, mobile and 20 generation/cancel cycles, plus four accessibility scans."
+    "note": "All 15 tests passed with OpenSCAD 2026.09.24.binfit1: existing browser, mobile, WebKit and accessibility checks plus collapsed help, opt-in feedback diagnostics and stale export-evidence scenarios. See validation/reports/tool-support.md."
   },
   "geometry": {
     "status": "passed",

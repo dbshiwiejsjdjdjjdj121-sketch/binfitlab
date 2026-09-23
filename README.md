@@ -27,7 +27,8 @@ npm run preview
 - Thin baseplates; automatic complete-cell tiling for a printer bed and edge margin; individual STL and assembly ZIP.
 - Drawer measurements and margins; add, move, rotate, duplicate and delete bins; keyboard movement, undo/redo; bounds and overlap checks.
 - Local project autosave, validated JSON import/export, unique models with quantities, assembly SVG, manifest, CSV and printable HTML guide.
-- Cancellable worker jobs. Editing invalidates old results; mesh/size failures block export. No project data leaves the browser.
+- Cancellable worker jobs. Editing invalidates old results; mesh/size failures block export. No automatic project uploads.
+- Collapsed three-step help, current-model export checks and drawer export summaries. Feedback is opt-in: save a local diagnostic JSON and open an email draft; the visitor chooses whether to attach and send it.
 
 ## Geometry provenance
 

@@ -27,9 +27,15 @@ import {
   type Placement,
   type Bin,
 } from "../core/project";
-import { download, makePrintBundle, projectTiles } from "../core/export";
+import {
+  download,
+  makePrintBundle,
+  projectTiles,
+  type PrintKitChecks,
+} from "../core/export";
 import { BedFields, NumberField } from "./Fields";
 import { BinFields } from "./Generator";
+import { ExportChecks, QuickGuide, ToolFeedback } from "./ToolSupport";
 const STORAGE = "gridfit-project-v1";
 function initialProject() {
   const p = newProject();
@@ -62,6 +68,12 @@ export default function Planner() {
     [progress, setProgress] = useState("");
   const [tab, setTab] = useState<"drawer" | "bin">("drawer"),
     [, setHistoryVersion] = useState(0);
+  const [checkedKit, setCheckedKit] = useState<{
+    key: string;
+    checks: PrintKitChecks;
+  } | null>(null);
+  const projectKey = JSON.stringify(project);
+  const kitChecks = checkedKit?.key === projectKey ? checkedKit.checks : null;
   const past = useRef<Project[]>([]),
     future = useRef<Project[]>([]),
     input = useRef<HTMLInputElement>(null),
@@ -112,6 +124,9 @@ export default function Planner() {
     setMessage("");
   }
   function undo() {
+    abort.current?.abort();
+    setBusy(false);
+    setProgress("");
     const p = past.current.pop();
     if (p) {
       future.current.push(project);
@@ -120,6 +135,9 @@ export default function Planner() {
     }
   }
   function redo() {
+    abort.current?.abort();
+    setBusy(false);
+    setProgress("");
     const p = future.current.pop();
     if (p) {
       past.current.push(project);
@@ -201,6 +219,7 @@ export default function Planner() {
   async function exportKit() {
     setMessage("");
     setBusy(true);
+    setCheckedKit(null);
     const controller = new AbortController();
     abort.current = controller;
     try {
@@ -211,6 +230,10 @@ export default function Planner() {
         project.bed,
         (label, done, total) => setProgress(`${label} · ${done}/${total}`),
         controller.signal,
+        (checks) => {
+          if (!controller.signal.aborted)
+            setCheckedKit({ key: projectKey, checks });
+        },
       );
       if (!controller.signal.aborted) {
         download(bytes, "gridfit-drawer-print-kit.zip", "application/zip");
@@ -286,6 +309,46 @@ export default function Planner() {
             <span>{busy ? "Preparing…" : "Export print kit"}</span>
           </button>
         </div>
+      </div>
+      <div className="planner-support">
+        <QuickGuide kind="drawer" />
+        <ExportChecks
+          summary={
+            issues.length
+              ? "Review layout before exporting"
+              : !project.bins.length
+                ? "Add a bin to get started"
+                : kitChecks
+                  ? `${kitChecks.modelCount} models checked · view export checks`
+                  : "Layout checked · models checked on export"
+          }
+          rows={[
+            {
+              label: "Layout",
+              value: issues.length
+                ? issues.join(" ")
+                : `${project.bins.length} bins; no overlaps or grid overflows`,
+            },
+            {
+              label: "Entered print bed",
+              value: `${project.bed.width} × ${project.bed.depth} mm; ${project.bed.margin} mm margin per side`,
+            },
+            {
+              label: "Model & bed checks",
+              value: kitChecks
+                ? `${kitChecks.modelCount} unique STLs checked; ${kitChecks.partCount} parts to print, including ${kitChecks.plateCount} plate tiles`
+                : "Every STL is generated, measured and checked against the entered bed during export",
+            },
+            {
+              label: "Drawer height",
+              value:
+                project.drawer.height == null
+                  ? "Not checked — add your drawer's clear height"
+                  : kitChecks?.heightCheck ||
+                    "Measured model heights are checked during export",
+            },
+          ]}
+        />
       </div>
       <div className="planner-body">
         <aside className="controls-panel planner-controls">
@@ -682,7 +745,11 @@ export default function Planner() {
               <strong>
                 {project.drawer.height == null
                   ? "Not checked — add height"
-                  : "Measured during export; confirm assembled fit"}
+                  : kitChecks?.clearanceLowerBound != null
+                    ? kitChecks.clearanceLowerBound >= 0
+                      ? `${kitChecks.clearanceLowerBound.toFixed(2)} mm spare using bin + full plate height; confirm physical fit`
+                      : "Bin fits alone; assembled clearance needs checking"
+                    : "Measured during export; confirm assembled fit"}
               </strong>
             </div>
           </div>
@@ -719,6 +786,16 @@ export default function Planner() {
             Drag a bin to move it. Use the side panel for exact positions. Your
             print kit includes unique models, quantities and an assembly map.
           </p>
+          <ToolFeedback
+            tool="drawer"
+            description={`Drawer: ${project.drawer.width} × ${project.drawer.depth} mm; clear height: ${project.drawer.height ?? "not supplied"}; bins: ${project.bins.length}`}
+            context={{
+              project: { ...project, name: "Feedback layout" },
+              layoutIssues: issues,
+              exportChecks: kitChecks,
+              message: message || null,
+            }}
+          />
         </section>
       </div>
     </div>
